@@ -4,14 +4,15 @@ using System.Net.NetworkInformation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
     
     public CharacterController controller;
 
-    public float speed = 12f;
-    public float gravity = -9.81f;
+    private float speed;
+    private static float gravity = -9.80665f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = this.gameObject.GetComponent<PlayerManager>().Speed;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)

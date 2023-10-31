@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     public int Health = 100;
-    public double JumpHeight = 0; // DEFINITELY CHANGE !!!
-    public double Speed = 10;
-    public double SprintSpeed = 15;
-    public double DetectionRadius = 1.0;
+    public float JumpHeight = 0f; // DEFINITELY CHANGE !!!
+    public float Speed = 10f;
+    public float SprintSpeed = 15f;
+    public float DetectionRadius = 1.0f;
 }
