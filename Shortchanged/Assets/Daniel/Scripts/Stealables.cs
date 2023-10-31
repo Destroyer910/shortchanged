@@ -23,8 +23,11 @@ public class Stealables : MonoBehaviour
     {
         if (isInTrigger && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Item stolen worth $" + CashValue);
-            Destroy(gameObject);
+            stealItem();
         }
+    }
+    public void stealItem() {
+        Debug.Log("Item stolen worth $"+CashValue);
+        Destroy(gameObject);
     }
 }
