@@ -12,13 +12,13 @@ public class DoorOpen : MonoBehaviour
     void Start()
     {
         parentObject = transform.parent.gameObject;
-        originalRotation = transform.rotation.y;
+        originalRotation = transform.eulerAngles.y;
     }
 
     public void toggleDoor()
     {
         Debug.Log("Start");
-        if(transform.rotation.y == originalRotation)
+        if(transform.eulerAngles.y == originalRotation)
         {
             parentObject.transform.localEulerAngles = new Vector3(0, originalRotation + 90, 0);
         }

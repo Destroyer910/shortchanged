@@ -14,13 +14,10 @@ public class KeyForLockedDoor : MonoBehaviour
         openScript = thisLockedDoor.GetComponent<LockedDoorOpen>();
     }
 
-    private void OnCollisionEnter(Collision other) 
+    public void collectKey()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            openScript.unlockDoor();
-            Debug.Log("KeyCollected");
-            Destroy(gameObject);
-        }    
+        openScript.unlockDoor();
+        Debug.Log("KeyCollected");
+        Destroy(gameObject);
     }
 }

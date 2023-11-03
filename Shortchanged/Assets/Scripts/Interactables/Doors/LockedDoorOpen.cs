@@ -6,14 +6,14 @@ public class LockedDoorOpen : MonoBehaviour
 {
      
     private GameObject parentObject;
-    private float originalRotation;
+    public float originalRotation;
     public float rotationSpeed;
     private bool unlocked = false;
 
     void Start()
     {
         parentObject = transform.parent.gameObject;
-        originalRotation = transform.rotation.y;
+        originalRotation = parentObject.transform.eulerAngles.y;
     }
 
     public void toggleDoor()
@@ -21,7 +21,7 @@ public class LockedDoorOpen : MonoBehaviour
         if(unlocked)
         {
             Debug.Log("Start");
-            if(transform.rotation.y == originalRotation)
+            if(transform.eulerAngles.y == originalRotation)
             {
                 parentObject.transform.localEulerAngles = new Vector3(0, originalRotation + 90, 0);
             }

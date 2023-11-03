@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea0acefac2eb1d4b98a491f1a0f5399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalRotation: 0
   rotationSpeed: 0
 --- !u!54 &214353042
 Rigidbody:
@@ -462,9 +463,9 @@ GameObject:
   - component: {fileID: 304662065}
   - component: {fileID: 304662064}
   - component: {fileID: 304662063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1452,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d9e1bdd68904b4482d9e70635017b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 4
+  raycastDistance: 3
   layer: 0
   cantDoReticle: {fileID: 21300000, guid: ad23a33638876d247b05a15d4813a928, type: 3}
   canDoReticle: {fileID: 21300000, guid: 7fff320620aedc6428dff0d093fa9789, type: 3}
