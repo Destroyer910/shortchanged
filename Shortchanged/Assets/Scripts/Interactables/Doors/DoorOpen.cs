@@ -13,7 +13,6 @@ public class DoorOpen : MonoBehaviour
     {
         parentObject = transform.parent.gameObject;
         originalRotation = transform.rotation.y;
-        toggleDoor();
     }
 
     public void toggleDoor()
@@ -28,6 +27,5 @@ public class DoorOpen : MonoBehaviour
             parentObject.transform.localEulerAngles = new Vector3(0, originalRotation, 0);
         }
     }
-
     
 }
