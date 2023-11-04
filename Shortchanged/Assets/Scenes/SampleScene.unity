@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427176, b: 0.56452405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 941247819}
   - component: {fileID: 941247820}
   - component: {fileID: 941247821}
+  - component: {fileID: 941247822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1273,8 +1274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 941247820}
-  speed: 8
-  gravity: -9.81
   groundCheck: {fileID: 1810094074}
   groundDistance: 0.4
   groundMask:
@@ -1333,6 +1332,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &941247822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941247814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b326dba6bedb3f84cbab7a9f5889a47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  JumpHeight: 10
+  Speed: 10
+  SprintSpeed: 12
+  DetectionRadius: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
