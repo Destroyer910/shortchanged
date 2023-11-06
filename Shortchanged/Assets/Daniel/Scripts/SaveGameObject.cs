@@ -1,8 +1,10 @@
 using System;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public class SaveGameObject
+public class SaveGameObject : MonoBehaviour
 {
     public int Health;
     public float JumpHeight;
@@ -15,24 +17,6 @@ public class SaveGameObject
     private const float DEFAULT_SPEED = 5f;
     private const float DEFAULT_SPRINT_SPEED = 15f;
     private const float DEFAULT_DETECTION_RADIUS = 1.0f;
-
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius)
-    {
-        setHealth(health);
-        setJumpHeight(jumpHeight);
-        setSpeed(speed);
-        setSprintSpeed(sprintSpeed);
-        setDetectionRadius(detectionRadius);
-    }
-
-    public SaveGameObject()
-    {
-        setHealth(DEFAULT_HEALTH);
-        setJumpHeight(DEFAULT_JUMP_HEIGHT);
-        setSpeed(DEFAULT_SPEED);
-        setSprintSpeed(DEFAULT_SPRINT_SPEED);
-        setDetectionRadius(DEFAULT_DETECTION_RADIUS);
-    }
 
     public int getHealth() { return Health; }
     public float getJumpHeight() { return JumpHeight; }

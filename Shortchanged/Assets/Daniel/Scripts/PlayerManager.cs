@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    SaveGameObject saveGame = new SaveGameObject();
-    public int Health;
-    public float JumpHeight;
-    public float Speed;
-    public float SprintSpeed;
-    public float DetectionRadius;
+    public SaveSystem saveGame;
+    private int MaxHealth;
+    private float JumpHeight;
+    private float MaxSpeed;
+    private float MaxSprintSpeed;
+    private float DetectionRadius;
 
     private void Start()
     {
-        Health = saveGame.getHealth();
+        saveGame.SaveFile(saveGame);
+
+        MaxHealth = saveGame.getHealth();
         JumpHeight = saveGame.getJumpHeight();
-        Speed = saveGame.getSpeed();
-        SprintSpeed = saveGame.getSprintSpeed();
+        MaxSpeed = saveGame.getSpeed();
+        MaxSprintSpeed = saveGame.getSprintSpeed();
         DetectionRadius = saveGame.getDetectionRadius();
 
         print(JsonUtility.ToJson(saveGame));

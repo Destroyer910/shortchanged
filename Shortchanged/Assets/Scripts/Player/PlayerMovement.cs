@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = this.gameObject.GetComponent<PlayerManager>().Speed;
+        speed = this.gameObject.GetComponent<PlayerManager>().saveGame.getSpeed();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
