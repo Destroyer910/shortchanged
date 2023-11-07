@@ -517,26 +517,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
-      propertyPath: Speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
-      propertyPath: Health
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
-      propertyPath: saveGame
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
-      propertyPath: SprintSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
-      propertyPath: DetectionRadius
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2869183
@@ -577,8 +557,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
