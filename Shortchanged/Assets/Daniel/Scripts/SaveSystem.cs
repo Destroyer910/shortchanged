@@ -7,21 +7,14 @@ using UnityEngine;
 
 public class SaveSystem : SaveGameObject
 {
-    String filePath;
+    String filePath = "";
     FileStream file;
-
-    private void Start()
-    {
-        filePath = Application.persistentDataPath + "/save.dat";
-    }
 
     public void SaveFile(SaveSystem saveSystem)
     {
-        if (File.Exists(filePath))
-        {
-            file = File.OpenWrite(filePath);
-        }
-        else
+        filePath = Application.persistentDataPath + "/save.dat";
+        print(filePath);
+        if (!File.Exists(filePath))
         {
             file = File.Create(filePath);
         }
@@ -31,11 +24,8 @@ public class SaveSystem : SaveGameObject
 
     public void LoadFile(SaveSystem saveSystem)
     {
-        if (File.Exists(filePath))
-        {
-            file = File.OpenRead(filePath);
-        }
-        else
+        filePath = Application.persistentDataPath + "/save.dat";
+        if (!File.Exists(filePath))
         {
             file = File.Create(filePath);
         }

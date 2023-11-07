@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        saveGame.SaveFile(saveGame);
+        saveGame.LoadFile(saveGame);
 
         MaxHealth = saveGame.getHealth();
         JumpHeight = saveGame.getJumpHeight();
