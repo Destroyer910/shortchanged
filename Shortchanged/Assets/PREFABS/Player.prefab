@@ -116,7 +116,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5752045379807679987}
-  - component: {fileID: 4599093265956977679}
   - component: {fileID: 4895586729520153488}
   - component: {fileID: 1253946198858303085}
   - component: {fileID: 4834208837480736847}
@@ -147,23 +146,6 @@ Transform:
   - {fileID: 7126523934538089319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4599093265956977679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774652370516824775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b326dba6bedb3f84cbab7a9f5889a47b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 100
-  JumpHeight: 0
-  Speed: 3
-  SprintSpeed: 6
-  DetectionRadius: 1
 --- !u!114 &4895586729520153488
 MonoBehaviour:
   m_ObjectHideFlags: 0

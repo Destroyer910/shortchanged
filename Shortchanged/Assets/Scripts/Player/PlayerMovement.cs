@@ -5,8 +5,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PlayerManager
 {
     
     public CharacterController controller;
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = this.gameObject.GetComponent<PlayerManager>().saveGame.getSpeed();
+        speed = MaxSpeed;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -42,5 +43,10 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            saveSystem.SaveFile(loadGame);
+        }
     }
 }

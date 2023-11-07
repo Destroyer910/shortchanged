@@ -13,7 +13,6 @@ public class SaveSystem : SaveGameObject
     public void SaveFile(SaveSystem saveSystem)
     {
         filePath = Application.persistentDataPath + "/save.dat";
-        print(filePath);
         if (!File.Exists(filePath))
         {
             file = File.Create(filePath);
@@ -22,7 +21,7 @@ public class SaveSystem : SaveGameObject
         File.WriteAllText(filePath, JsonUtility.ToJson(saveSystem));
     }
 
-    public void LoadFile(SaveSystem saveSystem)
+    public String LoadFile()
     {
         filePath = Application.persistentDataPath + "/save.dat";
         if (!File.Exists(filePath))
@@ -30,6 +29,6 @@ public class SaveSystem : SaveGameObject
             file = File.Create(filePath);
         }
 
-        saveSystem = (SaveSystem)JsonUtility.FromJson<SaveGameObject>(File.ReadAllText(filePath));
+        return File.ReadAllText(filePath);
     }
 }

@@ -294,7 +294,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770681164}
-  - component: {fileID: 770681163}
   m_Layer: 0
   m_Name: SaveGameActor
   m_TagString: Untagged
@@ -302,23 +301,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &770681163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770681162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a27970f7cc09d47957d0558e224bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 100
-  JumpHeight: 10
-  Speed: 5
-  SprintSpeed: 15
-  DetectionRadius: 1
 --- !u!4 &770681164
 Transform:
   m_ObjectHideFlags: 0
@@ -546,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: saveGame
       value: 
-      objectReference: {fileID: 770681163}
+      objectReference: {fileID: 0}
     - target: {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: SprintSpeed
       value: 0
@@ -595,7 +577,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4599093265956977679, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

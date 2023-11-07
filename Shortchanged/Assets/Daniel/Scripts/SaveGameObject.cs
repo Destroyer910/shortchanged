@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public class SaveGameObject : MonoBehaviour
+public class SaveGameObject
 {
     public int Health;
     public float JumpHeight;
