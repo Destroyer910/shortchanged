@@ -46,7 +46,7 @@ public class PlayerMovement : PlayerManager
 
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            saveSystem.SaveFile(loadGame);
+            base.SavePlayerStuff();
         }
     }
 }

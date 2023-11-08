@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,8 +17,9 @@ public class SaveSystem : SaveGameObject
         if (!File.Exists(filePath))
         {
             file = File.Create(filePath);
+            file.Close();
         }
-
+        Debug.Log(JsonUtility.ToJson(saveSystem));
         File.WriteAllText(filePath, JsonUtility.ToJson(saveSystem));
     }
 
@@ -26,7 +28,7 @@ public class SaveSystem : SaveGameObject
         filePath = Application.persistentDataPath + "/save.dat";
         if (!File.Exists(filePath))
         {
-            file = File.Create(filePath);
+            SaveFile(this);
         }
 
         return File.ReadAllText(filePath);

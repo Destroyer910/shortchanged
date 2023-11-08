@@ -6,28 +6,38 @@ using UnityEngine;
 [Serializable]
 public class SaveGameObject
 {
-    public int Health;
     public float JumpHeight;
     public float Speed;
     public float SprintSpeed;
     public float DetectionRadius;
+    public int Cash;
 
-    private const int DEFAULT_HEALTH = 100;
     private const float DEFAULT_JUMP_HEIGHT = 10f;
     private const float DEFAULT_SPEED = 5f;
     private const float DEFAULT_SPRINT_SPEED = 15f;
     private const float DEFAULT_DETECTION_RADIUS = 1.0f;
+    private const int DEFAULT_CASH = 0;
 
-    public int getHealth() { return Health; }
+    public SaveGameObject() {
+        setJumpHeight(DEFAULT_JUMP_HEIGHT);
+        setSpeed(DEFAULT_SPEED);
+        setSprintSpeed(DEFAULT_SPRINT_SPEED);
+        setDetectionRadius(DEFAULT_DETECTION_RADIUS);
+    }
+
+    public SaveGameObject(float jumpHeight, float speed, float sprintSpeed, float detectionRadius) {
+        setJumpHeight(jumpHeight);
+        setSpeed(speed);
+        setSprintSpeed(sprintSpeed);
+        setDetectionRadius(detectionRadius);
+    }
+
     public float getJumpHeight() { return JumpHeight; }
     public float getSpeed() {  return Speed; }
     public float getSprintSpeed() { return SprintSpeed; }
     public float getDetectionRadius() {  return DetectionRadius; }
+    public int getCash() { return Cash; }
 
-    public void setHealth(int health)
-    {
-        if (health > 0) { Health = health; }
-    }
     public void setJumpHeight(float jumpHeight)
     {
         if (jumpHeight > 0) { JumpHeight = jumpHeight; }
@@ -43,5 +53,11 @@ public class SaveGameObject
     public void setDetectionRadius(float detectionRadius)
     {
         if (detectionRadius > 0) { DetectionRadius = detectionRadius; }
+    }
+    public void setCash(int newCash) {
+        Cash = newCash;
+    }
+    public void addCash(int plusCash) {
+        Cash += plusCash;
     }
 }
