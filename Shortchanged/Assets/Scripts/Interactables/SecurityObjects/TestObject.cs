@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TestObject : MonoBehaviour
 {
-    public GameObject hackMenu;
+    public GameObject colorHack;
 
     public void hackTest()
     {
-        hackMenu.SetActive(true);
+        colorHack.SetActive(true);
+        colorHack.GetComponent<ColorPicker>().startMiniGame();
     }
 }
