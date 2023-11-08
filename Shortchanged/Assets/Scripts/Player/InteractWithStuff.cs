@@ -68,6 +68,16 @@ public class InteractWithStuff : MonoBehaviour
                     keyScript.collectKey();
                 }
             }
+            //If the player is looking at a test disable object.
+            else if(hit.collider.tag == "TestDisable")
+            {
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    //Run the hacking minigame.
+                    TestObject testObjectScript = hit.collider.gameObject.GetComponent<TestObject>();
+                    testObjectScript.hackTest();
+                }
+            }
         }
         else
         {

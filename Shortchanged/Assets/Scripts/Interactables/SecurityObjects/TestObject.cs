@@ -9,6 +9,12 @@ public class TestObject : MonoBehaviour
     public void hackTest()
     {
         colorHack.SetActive(true);
-        colorHack.GetComponent<ColorPicker>().startMiniGame();
+        colorHack.GetComponent<ColorPicker>().startMiniGame(gameObject);
+    }
+
+    public void disable()
+    {
+        int newLayer = LayerMask.NameToLayer("CantInteract");
+        gameObject.layer = newLayer;
     }
 }
