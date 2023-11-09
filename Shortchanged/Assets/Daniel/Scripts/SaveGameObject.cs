@@ -9,20 +9,23 @@ public class SaveGameObject
     public float Speed;
     public float SprintSpeed;
     public float DetectionRadius;
+    public float Sensitivity;
 
     private const int DEFAULT_HEALTH = 100;
     private const float DEFAULT_JUMP_HEIGHT = 10f;
     private const float DEFAULT_SPEED = 5f;
     private const float DEFAULT_SPRINT_SPEED = 15f;
     private const float DEFAULT_DETECTION_RADIUS = 1.0f;
+    private const float DEFAULT_SENSITIVITY = 0;
 
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius)
+    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity)
     {
         setHealth(health);
         setJumpHeight(jumpHeight);
         setSpeed(speed);
         setSprintSpeed(sprintSpeed);
         setDetectionRadius(detectionRadius);
+        setSensitivity(sensitivity);
     }
 
     public SaveGameObject()
@@ -32,6 +35,7 @@ public class SaveGameObject
         setSpeed(DEFAULT_SPEED);
         setSprintSpeed(DEFAULT_SPRINT_SPEED);
         setDetectionRadius(DEFAULT_DETECTION_RADIUS);
+        setSensitivity(DEFAULT_SENSITIVITY);
     }
 
     public int getHealth() { return Health; }
@@ -39,6 +43,7 @@ public class SaveGameObject
     public float getSpeed() {  return Speed; }
     public float getSprintSpeed() { return SprintSpeed; }
     public float getDetectionRadius() {  return DetectionRadius; }
+    public float getSensitivity() {  return Sensitivity; }
 
     public void setHealth(int health)
     {
@@ -59,5 +64,9 @@ public class SaveGameObject
     public void setDetectionRadius(float detectionRadius)
     {
         if (detectionRadius > 0) { DetectionRadius = detectionRadius; }
+    }
+    public void setSensitivity(float sensitivity)
+    {
+        if (sensitivity >= 0) { Sensitivity = sensitivity; }
     }
 }

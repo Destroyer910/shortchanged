@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public float Speed;
     public float SprintSpeed;
     public float DetectionRadius;
+    public float Sensitivity;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerManager : MonoBehaviour
         Speed = saveGame.getSpeed();
         SprintSpeed = saveGame.getSprintSpeed();
         DetectionRadius = saveGame.getDetectionRadius();
+        Sensitivity = saveGame.getSensitivity();
 
         print(JsonUtility.ToJson(saveGame));
     }
