@@ -5,28 +5,30 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public SaveSystem saveSystem = new SaveSystem();
-    public SaveSystem loadGame;
-    private float JumpHeight;
-    protected float MaxSpeed;
-    private float MaxSprintSpeed;
-    private float DetectionRadius;
-    private int cash;
+    SaveGameObject loadSystem = new SaveGameObject();
+    public SaveSystem saveGame;
+    public float JumpHeight;
+    public float Speed;
+    public float SprintSpeed;
+    public float DetectionRadius;
+    public float Sensitivity;
+    public int cash;
 
     private void Start()
     {
-        loadGame = JsonUtility.FromJson<SaveSystem>(saveSystem.LoadFile());
+        loadSystem = JsonUtility.FromJson<SaveSystem>(saveSystem.LoadFile());
 
-        JumpHeight = loadGame.getJumpHeight();
-        MaxSpeed = loadGame.getSpeed();
-        MaxSprintSpeed = loadGame.getSprintSpeed();
-        DetectionRadius = loadGame.getDetectionRadius();
+        JumpHeight = saveGame.getJumpHeight();
+        Speed = saveGame.getSpeed();
+        SprintSpeed = saveGame.getSprintSpeed();
+        DetectionRadius = saveGame.getDetectionRadius();
+        Sensitivity = saveGame.getSensitivity();
         cash = loadGame.getCash();
 
         print(JsonUtility.ToJson(loadGame));
     }
 
     public void SavePlayerStuff() {
-        saveSystem.SaveFile(loadGame);
+        loadSystem.SaveFile(saveGame);
     }
 }
