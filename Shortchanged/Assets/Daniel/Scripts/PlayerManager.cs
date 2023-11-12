@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    SaveGameObject loadSystem = new SaveGameObject();
+    SaveSystem loadSystem = new SaveSystem();
     public SaveSystem saveGame;
     public float JumpHeight;
     public float Speed;
@@ -16,16 +16,16 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        loadSystem = JsonUtility.FromJson<SaveSystem>(saveSystem.LoadFile());
+        saveGame = JsonUtility.FromJson<SaveSystem>(loadSystem.LoadFile());
 
         JumpHeight = saveGame.getJumpHeight();
         Speed = saveGame.getSpeed();
         SprintSpeed = saveGame.getSprintSpeed();
         DetectionRadius = saveGame.getDetectionRadius();
         Sensitivity = saveGame.getSensitivity();
-        cash = loadGame.getCash();
+        cash = saveGame.getCash();
 
-        print(JsonUtility.ToJson(loadGame));
+        print(JsonUtility.ToJson(saveGame));
     }
 
     public void SavePlayerStuff() {

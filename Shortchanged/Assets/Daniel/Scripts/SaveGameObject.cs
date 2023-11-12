@@ -22,7 +22,6 @@ public class SaveGameObject
 
     public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity)
     {
-        setHealth(health);
         setJumpHeight(jumpHeight);
         setSpeed(speed);
         setSprintSpeed(sprintSpeed);
@@ -32,7 +31,6 @@ public class SaveGameObject
 
     public SaveGameObject()
     {
-        setHealth(DEFAULT_HEALTH);
         setJumpHeight(DEFAULT_JUMP_HEIGHT);
         setSpeed(DEFAULT_SPEED);
         setSprintSpeed(DEFAULT_SPRINT_SPEED);
