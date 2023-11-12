@@ -5,6 +5,12 @@ using UnityEngine;
 public class TestObject : MonoBehaviour
 {
     public GameObject colorHack;
+    private ShowText textScript;
+
+    void Start()
+    {
+        textScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
+    }
 
     public void hackTest()
     {
@@ -16,5 +22,6 @@ public class TestObject : MonoBehaviour
     {
         int newLayer = LayerMask.NameToLayer("CantInteract");
         gameObject.layer = newLayer;
+        textScript.updateText("TestDisabled");
     }
 }
