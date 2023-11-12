@@ -10,13 +10,13 @@ public class ShowText : MonoBehaviour
 
     public void updateText(string textToShow)
     {
-        gameObject.SetActive(true);
         notifText.text = textToShow;
+        StartCoroutine(dissapearInASec());
     }
 
     private IEnumerator dissapearInASec()
     {
         yield return new WaitForSecondsRealtime(waitTime);
-        gameObject.SetActive(false);
+        notifText.text = "";
     }
 }
