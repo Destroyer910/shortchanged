@@ -9,11 +9,13 @@ public class LockedDoorOpen : MonoBehaviour
     public float originalRotation;
     public float rotationSpeed;
     private bool unlocked = false;
+    private ShowText textScript;
 
     void Start()
     {
         parentObject = transform.parent.gameObject;
         originalRotation = parentObject.transform.eulerAngles.y;
+        textScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
     }
 
     public void toggleDoor()
@@ -32,7 +34,7 @@ public class LockedDoorOpen : MonoBehaviour
         }
         else
         {
-            Debug.Log("DoorIsLocked");
+            textScript.updateText("Door is locked");
         }
     }
 
