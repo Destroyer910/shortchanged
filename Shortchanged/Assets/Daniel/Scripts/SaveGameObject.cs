@@ -13,6 +13,7 @@ public class SaveGameObject
     public float DetectionSpeed;
     public int permCash;
     public float Sensitivity;
+    public int maxDetection;
 
     private const float DEFAULT_JUMP_HEIGHT = 10f;
     private const float DEFAULT_SPEED = 5f;
@@ -20,8 +21,9 @@ public class SaveGameObject
     private const float DEFAULT_DETECTION_SPEED = 1.0f;
     private const int DEFAULT_PERM_CASH = 0;
     private const float DEFAULT_SENSITIVITY = 0;
+    private const int DEFAULT_MAX_DETECTION = 75;
 
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash)
+    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax)
     {
         setJumpHeight(jumpHeight);
         setSpeed(speed);
@@ -29,6 +31,7 @@ public class SaveGameObject
         setDetectionSpeed(detectionRadius);
         setSensitivity(sensitivity);
         setPermCash(newPermCash);
+        setMaxDetection(newMax);
     }
 
     public SaveGameObject()
@@ -39,6 +42,7 @@ public class SaveGameObject
         setDetectionSpeed(DEFAULT_DETECTION_SPEED);
         setSensitivity(DEFAULT_SENSITIVITY);
         setPermCash(DEFAULT_PERM_CASH);
+        setMaxDetection(DEFAULT_MAX_DETECTION);
     }
 
     public float getJumpHeight() { return JumpHeight; }
@@ -47,6 +51,7 @@ public class SaveGameObject
     public float getDetectionSpeed() {  return DetectionSpeed; }
     public int getPermCash() { return permCash; }
     public float getSensitivity() {  return Sensitivity; }
+    public int getMaxDetection() { return maxDetection; }
 
     public void setJumpHeight(float jumpHeight)
     {
@@ -73,5 +78,8 @@ public class SaveGameObject
     public void setSensitivity(float sensitivity)
     {
         if (sensitivity >= 0) { Sensitivity = sensitivity; }
+    }
+    public void setMaxDetection(int newMax) {
+        maxDetection = newMax;
     }
 }

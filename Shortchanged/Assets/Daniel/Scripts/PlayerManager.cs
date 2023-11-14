@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     private int permCash;
     private int levelCash;
     private int DetectionLevel;
+    private int maxDetection;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerManager : MonoBehaviour
         Sensitivity = saveGame.getSensitivity();
         permCash = saveGame.getPermCash();
         levelCash = 0;
+        maxDetection = saveGame.getMaxDetection();
 
         print(JsonUtility.ToJson(saveGame));
     }
@@ -41,6 +43,7 @@ public class PlayerManager : MonoBehaviour
     public int getPermCash() { return permCash; }
     public int getLevelCash() { return levelCash; }
     public int getDetectionLevel() { return DetectionLevel; }
+    public int getMaxDetection() { return maxDetection; }
 
     public void setJumpHeight(float newJumpHeight) {
         JumpHeight = newJumpHeight;
@@ -74,5 +77,8 @@ public class PlayerManager : MonoBehaviour
     }
     public void addDetectionLevel(int addLevel) {
         DetectionLevel += addLevel;
+    }
+    public void setMaxDetection(int newMax) {
+        maxDetection = newMax;
     }
 }

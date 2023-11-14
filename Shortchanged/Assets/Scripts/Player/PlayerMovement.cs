@@ -9,7 +9,6 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : PlayerManager
 {
-    
     public CharacterController controller;
 
     private float speed;
