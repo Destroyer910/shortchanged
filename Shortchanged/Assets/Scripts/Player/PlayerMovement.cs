@@ -25,7 +25,7 @@ public class PlayerMovement : PlayerManager
     // Update is called once per frame
     void Update()
     {
-        speed = base.Speed;
+        speed = base.getSpeed();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)

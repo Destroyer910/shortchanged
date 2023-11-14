@@ -12,7 +12,7 @@ public class UpdateSensitivity : MonoBehaviour
 
     public void updateSensitivity()
     {
-        playerManagerScript.Sensitivity = sensitivitySlider.value * 2000 + 1250;
-        cameraScript.mouseSensitivity = playerManagerScript.Sensitivity;
+        playerManagerScript.setSensitivity(sensitivitySlider.value * 2000 + 1250);
+        cameraScript.mouseSensitivity = playerManagerScript.getSensitivity();
     }
 }
