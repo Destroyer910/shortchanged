@@ -8,9 +8,11 @@ public class Stealables : MonoBehaviour
     public int CashValue;
     public GameObject floatingText;
     private bool isInTrigger;
+    private PlayerManager managerScript;
 
     private void OnTriggerEnter(Collider other)
     {
+        managerScript = other.GetComponent<PlayerManager>();
         floatingText.SetActive(true);
         isInTrigger = true;
     }
@@ -28,6 +30,7 @@ public class Stealables : MonoBehaviour
     }
     public void stealItem() {
         Debug.Log("Item stolen worth $"+CashValue);
+        managerScript.addLevelCash(CashValue);
         Destroy(gameObject);
     }
 }
