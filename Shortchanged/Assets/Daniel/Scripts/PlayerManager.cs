@@ -10,10 +10,11 @@ public class PlayerManager : MonoBehaviour
     private float JumpHeight;
     private float Speed;
     private float SprintSpeed;
-    private float DetectionRadius;
+    private float DetectionSpeed;
     private float Sensitivity;
     private int permCash;
     private int levelCash;
+    private int DetectionLevel;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class PlayerManager : MonoBehaviour
         JumpHeight = saveGame.getJumpHeight();
         Speed = saveGame.getSpeed();
         SprintSpeed = saveGame.getSprintSpeed();
-        DetectionRadius = saveGame.getDetectionRadius();
+        DetectionSpeed = saveGame.getDetectionSpeed();
         Sensitivity = saveGame.getSensitivity();
         permCash = saveGame.getPermCash();
         levelCash = 0;
@@ -35,10 +36,11 @@ public class PlayerManager : MonoBehaviour
     public float getJumpHeight() { return JumpHeight; }
     public float getSpeed() { return Speed; }
     public float getSprintSpeed() { return SprintSpeed; }
-    public float getDetectionRadius() { return DetectionRadius; }
+    public float getDetectionRadius() { return DetectionSpeed; }
     public float getSensitivity() { return Sensitivity; }
     public int getPermCash() { return permCash; }
     public int getLevelCash() { return levelCash; }
+    public int getDetectionLevel() { return DetectionLevel; }
 
     public void setJumpHeight(float newJumpHeight) {
         JumpHeight = newJumpHeight;
@@ -50,7 +52,7 @@ public class PlayerManager : MonoBehaviour
         SprintSpeed = newSprintSpeed;
     }
     public void setDetectionRadius(float newDetectionRadius) {
-        DetectionRadius = newDetectionRadius;
+        DetectionSpeed = newDetectionRadius;
     }
     public void setSensitivity(float newSensitivity) {
         Sensitivity = newSensitivity;
@@ -66,5 +68,11 @@ public class PlayerManager : MonoBehaviour
     }
     public void addLevelCash(int addCash) {
         levelCash += addCash;
+    }
+    public void setDetectionLevel(int newDetectionLevel) {
+        DetectionLevel = newDetectionLevel;
+    }
+    public void addDetectionLevel(int addLevel) {
+        DetectionLevel += addLevel;
     }
 }
