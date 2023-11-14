@@ -10,7 +10,7 @@ public class SaveGameObject
     public float Speed;
     public float SprintSpeed;
     public float DetectionRadius;
-    public int Cash;
+    public int permCash;
     public float Sensitivity;
 
     private const float DEFAULT_JUMP_HEIGHT = 10f;
@@ -42,7 +42,7 @@ public class SaveGameObject
     public float getSpeed() {  return Speed; }
     public float getSprintSpeed() { return SprintSpeed; }
     public float getDetectionRadius() {  return DetectionRadius; }
-    public int getCash() { return Cash; }
+    public int getPermCash() { return permCash; }
     public float getSensitivity() {  return Sensitivity; }
 
     public void setJumpHeight(float jumpHeight)
@@ -61,11 +61,11 @@ public class SaveGameObject
     {
         if (detectionRadius > 0) { DetectionRadius = detectionRadius; }
     }
-    public void setCash(int newCash) {
-        Cash = newCash;
+    public void setPermCash(int newCash) {
+        permCash = newCash;
     }
     public void addCash(int plusCash) {
-        Cash += plusCash;
+        permCash += plusCash;
     }
     public void setSensitivity(float sensitivity)
     {
