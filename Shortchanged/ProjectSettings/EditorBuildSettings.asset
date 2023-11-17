@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3DHubPOC.unity
     guid: c7f32177c5eca174495fdb11e389236c
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1fe156b8f3cbb67448ad2cc6380b0aa2
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2a9daed8a41015242840456d5c1f859a
+  - enabled: 1
+    path: Assets/Scenes/DanielProvingGrounds.unity
+    guid: 48189d211e2bacb49ab5a0d1c74d9302
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: dde0cf8a411d7d041a740fef29f500db
   m_configObjects: {}
