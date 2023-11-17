@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
     public float getJumpHeight() { return JumpHeight; }
     public float getSpeed() { return Speed; }
     public float getSprintSpeed() { return SprintSpeed; }
-    public float getDetectionRadius() { return DetectionSpeed; }
+    public float getDetectionSpeed() { return DetectionSpeed; }
     public float getSensitivity() { return Sensitivity; }
     public int getPermCash() { return permCash; }
     public int getLevelCash() { return levelCash; }
@@ -47,24 +47,31 @@ public class PlayerManager : MonoBehaviour
 
     public void setJumpHeight(float newJumpHeight) {
         JumpHeight = newJumpHeight;
+        saveGame.setJumpHeight(newJumpHeight);
     }
     public void setSpeed(float newSpeed) {
         Speed = newSpeed;
+        saveGame.setJumpHeight(newSpeed);
     }
     public void setSprintSpeed(float newSprintSpeed) {
         SprintSpeed = newSprintSpeed;
+        saveGame.setSprintSpeed(newSprintSpeed);
     }
-    public void setDetectionRadius(float newDetectionRadius) {
+    public void setDetectionSpeed(float newDetectionRadius) {
         DetectionSpeed = newDetectionRadius;
+        saveGame.setDetectionSpeed(newDetectionRadius);
     }
     public void setSensitivity(float newSensitivity) {
         Sensitivity = newSensitivity;
+        saveGame.setSensitivity(newSensitivity);
     }
     public void setPermCash(int newCash) {
         permCash = newCash;
+        saveGame.setPermCash(newCash);
     }
     public void addPermCash(int addCash) {
         permCash += addCash;
+        saveGame.addCash(addCash);
     }
     public void setLevelCash(int newLevelCash) {
         levelCash = newLevelCash;
@@ -80,5 +87,6 @@ public class PlayerManager : MonoBehaviour
     }
     public void setMaxDetection(int newMax) {
         maxDetection = newMax;
+        saveGame.setMaxDetection(newMax);
     }
 }
