@@ -6,7 +6,7 @@ public class DoorOpen : MonoBehaviour
 {
     
     private GameObject parentObject;
-    private float originalRotation;
+    public float originalRotation;
     public float rotationSpeed;
 
     void Start()
@@ -17,6 +17,8 @@ public class DoorOpen : MonoBehaviour
 
     public void toggleDoor()
     {
+        Debug.Log(parentObject.transform.rotation.y);
+        Debug.Log(originalRotation);
         Debug.Log("Start");
         if(transform.eulerAngles.y == originalRotation)
         {
@@ -26,6 +28,7 @@ public class DoorOpen : MonoBehaviour
         {
             parentObject.transform.localEulerAngles = new Vector3(0, originalRotation, 0);
         }
+        Debug.Log(parentObject.transform.rotation.y);
     }
     
 }
