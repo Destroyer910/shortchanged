@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     private int levelCash;
     private int DetectionLevel;
     private int maxDetection;
+    private bool unlockedLevel2;
 
     private void Start()
     {
@@ -29,8 +30,14 @@ public class PlayerManager : MonoBehaviour
         permCash = saveGame.getPermCash();
         levelCash = 0;
         maxDetection = saveGame.getMaxDetection();
+        unlockedLevel2 = saveGame.getUnlockedLevel2();
 
         print(JsonUtility.ToJson(saveGame));
+        
+        if(gameObject.GetComponent<PlayerMovement>() != null)
+        {
+            gameObject.GetComponent<PlayerMovement>().doStartStuff();
+        }
     }
     public void SavePlayerStuff() {
         loadSystem.SaveFile(saveGame);
@@ -44,6 +51,7 @@ public class PlayerManager : MonoBehaviour
     public int getLevelCash() { return levelCash; }
     public int getDetectionLevel() { return DetectionLevel; }
     public int getMaxDetection() { return maxDetection; }
+    public bool getUnlockedLevel2() { return unlockedLevel2; }
 
     public void setJumpHeight(float newJumpHeight) {
         JumpHeight = newJumpHeight;
@@ -88,5 +96,9 @@ public class PlayerManager : MonoBehaviour
     public void setMaxDetection(int newMax) {
         maxDetection = newMax;
         saveGame.setMaxDetection(newMax);
+    }
+    public void setUnlockedLevel2(bool newLevel2) {
+        unlockedLevel2 = newLevel2;
+        saveGame.setUnlockedLevel2(newLevel2);
     }
 }

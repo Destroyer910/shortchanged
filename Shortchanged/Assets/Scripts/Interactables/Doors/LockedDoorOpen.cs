@@ -5,16 +5,24 @@ using UnityEngine;
 public class LockedDoorOpen : MonoBehaviour
 {
      
-    private GameObject parentObject;
-    public float originalRotation;
-    public float rotationSpeed;
+    private Transform childObject;
     private bool unlocked = false;
+    private bool isOpen = false;
     private ShowText textScript;
+    public bool rotateCounterClockwise;
+    public bool rotateUp;
+    public bool deleteOnOpen;
+    public bool deleteOnUnlock;
+    public bool openOnlyOnUnlock;
+    public float rotateAmount;
+    public float numOfKeys;
+    public string textForFail;
+    public string textToReplaceFailAfterOpenOnUnlock;
+    
 
     void Start()
     {
-        parentObject = transform.parent.gameObject;
-        originalRotation = parentObject.transform.eulerAngles.y;
+        childObject = transform.Find("pivot");
         textScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
     }
 
@@ -22,25 +30,99 @@ public class LockedDoorOpen : MonoBehaviour
     {
         if(unlocked)
         {
-            Debug.Log("Start");
-            if(transform.eulerAngles.y == originalRotation)
+            if(deleteOnOpen)
             {
-                parentObject.transform.localEulerAngles = new Vector3(0, originalRotation + 90, 0);
+                Destroy(gameObject);
+            }
+            if(!rotateCounterClockwise)
+            {
+                if(!rotateUp)
+                {
+                    if(!isOpen)
+                    {
+                        transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                        isOpen = true;
+                    }
+                    else
+                    {
+                        transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                        isOpen = false;
+                    }
+                }
+                else
+                {
+                    if(!isOpen)
+                    {
+                        transform.RotateAround(childObject.position, transform.forward, rotateAmount);
+                        isOpen = true;
+                    }
+                    else
+                    {
+                        transform.RotateAround(childObject.position, transform.forward, -rotateAmount);
+                        isOpen = false;
+                    }
+                }
             }
             else
             {
-                parentObject.transform.localEulerAngles = new Vector3(0, originalRotation, 0);
+                if(!rotateUp)
+                {
+                    if(!isOpen)
+                    {
+                        transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                        isOpen = true;
+                    }
+                    else
+                    {
+                        transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                        isOpen = false;
+                    }
+                }
+                else
+                {
+                    if(!isOpen)
+                    {
+                        transform.RotateAround(childObject.position, transform.forward, -rotateAmount);
+                        isOpen = true;
+                    }
+                    else
+                    {
+                        transform.RotateAround(childObject.position, transform.forward, rotateAmount);
+                        isOpen = false;
+                    }
+                }
             }
         }
         else
         {
-            textScript.updateText("Door is locked");
+            textScript.updateText(textForFail);
         }
     }
 
     public void unlockDoor()
     {
-        unlocked = true;
+        if(numOfKeys > 0)
+        {
+            numOfKeys--;
+        }
+        if(numOfKeys == 0)
+        {
+            if(deleteOnUnlock)
+            {
+                Destroy(gameObject);
+            }
+            else if(openOnlyOnUnlock)
+            {
+                unlocked = true;
+                toggleDoor();
+                unlocked = false;
+                textForFail = textToReplaceFailAfterOpenOnUnlock;
+            }
+            else
+            {
+                unlocked = true;
+            }
+        }
     }
 
 }

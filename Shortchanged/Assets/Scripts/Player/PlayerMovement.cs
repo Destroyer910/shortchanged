@@ -11,7 +11,7 @@ public class PlayerMovement : PlayerManager
 {
     public CharacterController controller;
 
-    private float speed;
+    [SerializeField] private float speed;
     private static float gravity = -9.80665f;
 
     public Transform groundCheck;
@@ -21,15 +21,30 @@ public class PlayerMovement : PlayerManager
     Vector3 velocity;
     bool isGrounded; 
 
+    public void doStartStuff() 
+    {
+        speed = base.getSpeed();   
+    }
+
     // Update is called once per frame
     void Update()
     {
-        speed = base.getSpeed();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        //Sprint if the user is holding left shift;
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = base.getSprintSpeed();
+            Debug.Log(speed);
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = base.getSpeed();
         }
 
         float x = Input.GetAxis("Horizontal");

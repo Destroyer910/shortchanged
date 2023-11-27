@@ -5,30 +5,82 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
     
-    private GameObject parentObject;
-    public float originalRotation;
-    public float rotationSpeed;
+    private Transform childObject;
+    private bool isOpen = false;
+    public bool rotateCounterClockwise;
+    public bool rotateUp;
+    public bool deleteOnOpen;
+    public float rotateAmount;
 
     void Start()
     {
-        parentObject = transform.parent.gameObject;
-        originalRotation = transform.eulerAngles.y;
+        childObject = transform.Find("pivot");
     }
 
     public void toggleDoor()
     {
-        Debug.Log(parentObject.transform.rotation.y);
-        Debug.Log(originalRotation);
-        Debug.Log("Start");
-        if(transform.eulerAngles.y == originalRotation)
+        if(deleteOnOpen)
         {
-            parentObject.transform.localEulerAngles = new Vector3(0, originalRotation + 90, 0);
+            Destroy(gameObject);
+        }
+        if(!rotateCounterClockwise)
+        {
+            if(!rotateUp)
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                    isOpen = false;
+                }
+            }
+            else
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, transform.forward, rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, transform.forward, -rotateAmount);
+                    isOpen = false;
+                }
+            }
         }
         else
         {
-            parentObject.transform.localEulerAngles = new Vector3(0, originalRotation, 0);
+            if(!rotateUp)
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                    isOpen = false;
+                }
+            }
+            else
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, transform.forward, -rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, transform.forward, rotateAmount);
+                    isOpen = false;
+                }
+            }
         }
-        Debug.Log(parentObject.transform.rotation.y);
     }
     
 }
