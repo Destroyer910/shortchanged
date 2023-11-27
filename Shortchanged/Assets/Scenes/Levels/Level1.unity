@@ -4575,8 +4575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &1270640163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4888,8 +4890,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &1316416544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6908,9 +6912,113 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1340743811575024437, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.648
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340743811575024437, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468905263225914520, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468905263225914520, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.3966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468905263225914520, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3966
+      objectReference: {fileID: 0}
     - target: {fileID: 2538482770736128657, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1839655532}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changeToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeSceneToAny, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Hub
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813594888675228428, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368339602611913668, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692678640549659095, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692678640549659095, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692678640549659095, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900817923741076194, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672985675156334755, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5989
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672985675156334755, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5989
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672985675156334755, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5989
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672985675156334755, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149345636385502198, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149345636385502198, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.3525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149345636385502198, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149345636385502198, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -265.21
       objectReference: {fileID: 0}
     - target: {fileID: 8467166642492389520, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
       propertyPath: m_Pivot.x
@@ -6998,8 +7106,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8467166642492389520, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2101737933}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3250691529760211397, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1839655532}
   m_SourcePrefab: {fileID: 100100000, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+--- !u!1 &1839655530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3250691529760211397, guid: e454354cdf334d7469645f4ffc4894a0, type: 3}
+  m_PrefabInstance: {fileID: 1788255208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1839655532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839655530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb4794f2c3b0074a8b415a4b5979293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849036719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,8 +7426,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &1885830012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7877,7 +8007,7 @@ RectTransform:
   m_GameObject: {fileID: 2101737932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.92535263, y: 0.92535263, z: 0.92535263}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 103230175}
@@ -9996,8 +10126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!1 &5039911605679079983
 GameObject:
   m_ObjectHideFlags: 0
@@ -10382,8 +10514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!4 &6131011683877924147
 Transform:
   m_ObjectHideFlags: 0
@@ -10818,8 +10952,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!4 &7196334609387721516
 Transform:
   m_ObjectHideFlags: 0
@@ -11124,8 +11260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &7718337930788005568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11188,8 +11326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!1 &7921742877636646657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11298,8 +11438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!4 &8161215071553234945
 Transform:
   m_ObjectHideFlags: 0
@@ -11378,8 +11520,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!23 &8256137182827657242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11434,8 +11578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &8256137182827657244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11561,8 +11707,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &8524891079905096103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11714,8 +11862,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!1 &8818572667028091689
 GameObject:
   m_ObjectHideFlags: 0
@@ -11759,8 +11909,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!64 &8834478182983486321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11837,8 +11989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90be7fd02377d54f931b088249effff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: 0
-  rotationSpeed: 0
+  rotateCounterClockwise: 0
+  rotateUp: 0
+  deleteOnOpen: 0
+  rotateAmount: 0
 --- !u!65 &9096220282004407066
 BoxCollider:
   m_ObjectHideFlags: 0
