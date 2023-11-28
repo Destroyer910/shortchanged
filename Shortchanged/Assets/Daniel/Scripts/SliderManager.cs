@@ -12,6 +12,6 @@ public class SliderManager : MonoBehaviour
     }
     void Update()
     {
-        this.GetComponent<Slider>().value = playerManager.getDetectionLevel() / playerManager.getMaxDetection();
+        this.GetComponent<Slider>().value = (float)playerManager.getDetectionLevel() / (float)playerManager.getMaxDetection();
     }
 }

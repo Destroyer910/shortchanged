@@ -21,7 +21,7 @@ public class SaveGameObject
     private const float DEFAULT_SPRINT_SPEED = 15f;
     private const float DEFAULT_DETECTION_SPEED = 1.0f;
     private const int DEFAULT_PERM_CASH = 0;
-    private const float DEFAULT_SENSITIVITY = 0;
+    private const float DEFAULT_SENSITIVITY = 3000;
     private const int DEFAULT_MAX_DETECTION = 75;
     private const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
 
