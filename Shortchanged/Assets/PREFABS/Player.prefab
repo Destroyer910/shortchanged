@@ -65,7 +65,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 90
   orthographic: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 1000
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 5752045379807679987}
 --- !u!1 &774652370516824775
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 1593230456632636392}
   - component: {fileID: 4077738670584027646}
   - component: {fileID: 1463323223669486434}
+  - component: {fileID: 3634864602033854807}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4077738670584027646}
   speed: 0
+  FailScreen: {fileID: 0}
   groundCheck: {fileID: 7126523934538089319}
   groundDistance: 0.4
   groundMask:
@@ -295,6 +297,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3634864602033854807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774652370516824775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b326dba6bedb3f84cbab7a9f5889a47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6501312950531148308
 GameObject:
   m_ObjectHideFlags: 0

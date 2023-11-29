@@ -19,7 +19,9 @@ public class PlayerMovement : PlayerManager
     public LayerMask groundMask;
 
     Vector3 velocity;
-    bool isGrounded; 
+    bool isGrounded;
+
+    bool pass = false;
 
     public void doStartStuff() 
     {
@@ -47,8 +49,16 @@ public class PlayerMovement : PlayerManager
             speed = base.getSpeed();
         }
         if(DetectionLevel == maxDetection) {
-            Time.timeScale = 0;
-            FailScreen.SetActive(true);
+            if (!pass)
+            {
+                pass = true;
+                Time.timeScale = 0;
+                addPermCash(-50);
+                SavePlayerStuff();
+                FailScreen.SetActive(true);
+                UnityEngine.Cursor.lockState = CursorLockMode.None;
+            }
+
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
