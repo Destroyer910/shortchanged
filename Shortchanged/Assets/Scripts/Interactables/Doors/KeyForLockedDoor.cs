@@ -6,6 +6,8 @@ public class KeyForLockedDoor : MonoBehaviour
 {
 
     public GameObject thisLockedDoor;
+    public string keyGrabbedText;
+    public string totalKeyCount;
     private LockedDoorOpen openScript;
     private ShowText textScript;
 
@@ -20,7 +22,7 @@ public class KeyForLockedDoor : MonoBehaviour
     {
         openScript.unlockDoor();
         Debug.Log("KeyCollected");
-        textScript.updateText("Key collected");
+        textScript.updateText(keyGrabbedText + "| Keys left: " + openScript.numOfKeys + "/" + totalKeyCount);
         Destroy(gameObject);
     }
 }
