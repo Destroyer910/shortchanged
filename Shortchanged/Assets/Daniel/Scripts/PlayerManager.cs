@@ -6,17 +6,17 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     SaveSystem loadSystem = new SaveSystem();
-    private SaveSystem saveGame;
-    private float JumpHeight;
-    private float Speed;
-    private float SprintSpeed;
-    private float DetectionSpeed;
-    private float Sensitivity;
-    private int permCash;
-    private int levelCash;
-    private int DetectionLevel;
-    private int maxDetection;
-    private bool unlockedLevel2;
+    protected SaveSystem saveGame;
+    protected float JumpHeight;
+    protected float Speed;
+    protected float SprintSpeed;
+    protected float DetectionSpeed;
+    protected float Sensitivity;
+    protected int permCash;
+    protected int levelCash;
+    protected int DetectionLevel;
+    protected int maxDetection;
+    protected bool unlockedLevel2;
 
     private void Start()
     {

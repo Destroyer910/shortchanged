@@ -13,7 +13,7 @@ public class PlayerMovement : PlayerManager
 
     [SerializeField] private float speed;
     private static float gravity = -9.80665f;
-
+    public GameObject FailScreen;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -46,7 +46,10 @@ public class PlayerMovement : PlayerManager
         {
             speed = base.getSpeed();
         }
-
+        if(DetectionLevel == maxDetection) {
+            Time.timeScale = 0;
+            FailScreen.SetActive(true);
+        }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
