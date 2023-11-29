@@ -18,7 +18,7 @@ public class SaveGameObject
 
     private const float DEFAULT_JUMP_HEIGHT = 10f;
     private const float DEFAULT_SPEED = 5f;
-    private const float DEFAULT_SPRINT_SPEED = 15f;
+    private const float DEFAULT_SPRINT_SPEED = 8f;
     private const float DEFAULT_DETECTION_SPEED = 1.0f;
     private const int DEFAULT_PERM_CASH = 0;
     private const float DEFAULT_SENSITIVITY = 0;
