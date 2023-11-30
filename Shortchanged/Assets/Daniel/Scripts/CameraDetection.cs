@@ -9,12 +9,14 @@ public class CameraDetection : MonoBehaviour
     bool isInTrigger = false;
     void OnTriggerEnter(Collider other)
     {
+        this.GetComponent<Light>().enabled = true;
         isInTrigger = true;
         playerManager = other.GetComponent<PlayerManager>();
         StartCoroutine(IncreaseDetectionLevel());
     }
     private void OnTriggerExit(Collider other)
     {
+        this.GetComponent<Light>().enabled = false;
         isInTrigger = false;
         StopCoroutine(IncreaseDetectionLevel());
         StartCoroutine(DecreaseDetectionLevel());
