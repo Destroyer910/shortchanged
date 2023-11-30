@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: thugscreen
+  m_Name: closet
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: bff94fe6ad28620438055c57dfa1b158, type: 2}
+  m_Parent: {fileID: 2100000, guid: d6f64fcf3b481194886f922f9695c20b, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,14 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 3.24, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 29547d755e4b883438acf86107492f65, type: 3}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 3.24, y: 0}
+        m_Texture: {fileID: 2800000, guid: 1c2a95c8f596d5c47b25f5ab1f86b31f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors: []

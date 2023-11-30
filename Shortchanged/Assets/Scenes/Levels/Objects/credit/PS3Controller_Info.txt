@@ -1,0 +1,32 @@
+Asset Name: PS3Controller
+
+Created By: Caleb LeMaster
+
+Created On: 5/13/16
+
+Class of: 2018
+
+Created With: 3DS 2014 (Service Pack 3)
+
+Objects: Controller
+
+Tris: 	
+	Collision (6 objects) = 
+		UCX_Controller_01 = Top main body of controller
+		UCX_Controller_02 = Bottom main body of controller
+		UCX_Controller_03 = Left grip of the controller (facing forward)
+		UCX_Controller_04 = Right grip of the controller (facing forward)
+		UCX_Controller_05 = Left joystick
+		UCX_Controller_06 = Right joystick
+
+Suggested texture size: 512 or 1024 (1024 version included in FBX)
+
+Bones: None
+
+Animation Breakdown: None
+
+Notes: 
+UCX collision is added, but was rushed, so expect collision issues when using engines such as Unreal.
+The top of the controller is facing directly towards negative y.
+The psd file for the DM Is split into 4 different layers: the primary color of the controller, secondary colors (colors such as the joysticks and the buttons), third colors (colors such as the shapes on the buttons or logos.), and the UV for reference.
+The name of the object in the stl file is 'Controller'.
