@@ -17,6 +17,8 @@ public class PlayerMovement : PlayerManager
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    
+    public bool isDetected;
 
     Vector3 velocity;
     bool isGrounded;

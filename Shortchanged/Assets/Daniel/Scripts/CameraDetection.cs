@@ -6,20 +6,21 @@ public class CameraDetection : MonoBehaviour
 {
     float delay = 0.1f;
     PlayerManager playerManager;
+    PlayerMovement playerMovement;
     bool isInTrigger = false;
     void OnTriggerEnter(Collider other)
     {
         this.GetComponent<Light>().enabled = true;
         isInTrigger = true;
         playerManager = other.GetComponent<PlayerManager>();
-        StartCoroutine(IncreaseDetectionLevel());
+        playerMovement = other.GetComponent<PlayerMovement>();
+        playerMovement.isDetected = true;
     }
     private void OnTriggerExit(Collider other)
     {
+        playerMovement.isDetected = false;
         this.GetComponent<Light>().enabled = false;
         isInTrigger = false;
-        StopCoroutine(IncreaseDetectionLevel());
-        StartCoroutine(DecreaseDetectionLevel());
     }
     IEnumerator IncreaseDetectionLevel()
     {
