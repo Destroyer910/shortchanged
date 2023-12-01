@@ -17,6 +17,9 @@ public class SprintUpgrades : MonoBehaviour
     public Material activatedMaterial;
     private Light theLight;
     private Vector3 startPosition;
+    private bool isBought = false;
+    public GameObject boughtText;
+    public GameObject lockedText;
 
     private void Start() 
     {
@@ -44,14 +47,31 @@ public class SprintUpgrades : MonoBehaviour
         if(playerManagerScript.getSprintSpeed() >= newSpeed && !isDeactivated)
         {
             disableButton();
+            isBought = true;
         }
-        if(playerManagerScript.getSprintSpeed() < reqSpeed)
+        if(playerManagerScript.getSprintSpeed() < reqSpeed && !isDeactivated)
         {
             disableButton();
+            isBought = false;
         }
-        else if(playerManagerScript.getSprintSpeed() == reqSpeed)
+        else if(playerManagerScript.getSprintSpeed() == reqSpeed && isDeactivated)
         {
             enableButton();
+        }
+        if(isBought && isDeactivated)
+        {
+            boughtText.SetActive(true);
+            lockedText.SetActive(false);
+        }
+        else if(!isBought && isDeactivated)
+        {
+            lockedText.SetActive(true);
+            boughtText.SetActive(false);
+        }
+        else
+        {
+            lockedText.SetActive(false);
+            boughtText.SetActive(false);
         }
     }
 
@@ -69,8 +89,26 @@ public class SprintUpgrades : MonoBehaviour
         theLight.color = activatedMaterial.color;
         gameObject.transform.position = startPosition;
         isDeactivated = false;
+        boughtText.SetActive(false);
+        lockedText.SetActive(false);
     }
-
     
-
+    private void OnEnable() 
+    {
+        if(isBought && isDeactivated)
+        {
+            boughtText.SetActive(true);
+            lockedText.SetActive(false);
+        }
+        else if(!isBought && isDeactivated)
+        {
+            lockedText.SetActive(true);
+            boughtText.SetActive(false);
+        }
+        else
+        {
+            lockedText.SetActive(false);
+            boughtText.SetActive(false);
+        }
+    }
 }
