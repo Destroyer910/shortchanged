@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class PlayerManager : MonoBehaviour
     protected int maxDetection;
     protected bool unlockedLevel2;
 
+    [NonSerialized]
+    public bool isDetected;
+
     private void Start()
     {
         saveGame = JsonUtility.FromJson<SaveSystem>(loadSystem.LoadFile());
@@ -33,6 +37,9 @@ public class PlayerManager : MonoBehaviour
         unlockedLevel2 = saveGame.getUnlockedLevel2();
 
         print(JsonUtility.ToJson(saveGame));
+
+        StartCoroutine(IncreaseDetectionLevel(0.2));
+        StartCoroutine(DecreaseDetectionLevel(0.3));
         
         if(gameObject.GetComponent<PlayerMovement>() != null)
         {
@@ -100,5 +107,31 @@ public class PlayerManager : MonoBehaviour
     public void setUnlockedLevel2(bool newLevel2) {
         unlockedLevel2 = newLevel2;
         saveGame.setUnlockedLevel2(newLevel2);
+    }
+
+    IEnumerator IncreaseDetectionLevel(double delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds((float)delay);
+            
+            if(isDetected && DetectionLevel < maxDetection)
+            {print("Increased!");
+                addDetectionLevel((int)getDetectionSpeed());
+            }
+
+        }
+    }
+    IEnumerator DecreaseDetectionLevel(double delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds((float)delay);
+            
+            if (!isDetected && DetectionLevel > 0)
+            {print("Decreased!");
+                addDetectionLevel((int)getDetectionSpeed() * -1);
+            }
+        }
     }
 }
