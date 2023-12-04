@@ -9,6 +9,7 @@ public class DoorOpen : MonoBehaviour
     private bool isOpen = false;
     public bool rotateCounterClockwise;
     public bool rotateUp;
+    public bool rotateUpX;
     public bool deleteOnOpen;
     public float rotateAmount;
 
@@ -25,20 +26,20 @@ public class DoorOpen : MonoBehaviour
         }
         if(!rotateCounterClockwise)
         {
-            if(!rotateUp)
+            if(rotateUpX)
             {
                 if(!isOpen)
                 {
-                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                    transform.RotateAround(childObject.position, transform.right, rotateAmount);
                     isOpen = true;
                 }
                 else
                 {
-                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                    transform.RotateAround(childObject.position, transform.right, -rotateAmount);
                     isOpen = false;
                 }
             }
-            else
+            else if(rotateUp)
             {
                 if(!isOpen)
                 {
@@ -48,26 +49,39 @@ public class DoorOpen : MonoBehaviour
                 else
                 {
                     transform.RotateAround(childObject.position, transform.forward, -rotateAmount);
+                    isOpen = false;
+                }
+            }
+            else
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
                     isOpen = false;
                 }
             }
         }
         else
         {
-            if(!rotateUp)
+            if(rotateUpX)
             {
                 if(!isOpen)
                 {
-                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                    transform.RotateAround(childObject.position, transform.right, -rotateAmount);
                     isOpen = true;
                 }
                 else
                 {
-                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
+                    transform.RotateAround(childObject.position, transform.right, rotateAmount);
                     isOpen = false;
                 }
             }
-            else
+            else if(rotateUp)
             {
                 if(!isOpen)
                 {
@@ -77,6 +91,19 @@ public class DoorOpen : MonoBehaviour
                 else
                 {
                     transform.RotateAround(childObject.position, transform.forward, rotateAmount);
+                    isOpen = false;
+                }
+            }
+            else
+            {
+                if(!isOpen)
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, -rotateAmount);
+                    isOpen = true;
+                }
+                else
+                {
+                    transform.RotateAround(childObject.position, Vector3.up, rotateAmount);
                     isOpen = false;
                 }
             }
