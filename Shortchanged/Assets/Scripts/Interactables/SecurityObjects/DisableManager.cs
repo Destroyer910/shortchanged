@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DisableManager : MonoBehaviour
 {
-    public void disableObject()
+    public void disableObject(bool passed)
     {
         if(gameObject.tag == "TestDisable")
         {
-            gameObject.GetComponent<TestObject>().disable();
+            gameObject.GetComponent<TestObject>().disable(passed);
         }
     }
 }

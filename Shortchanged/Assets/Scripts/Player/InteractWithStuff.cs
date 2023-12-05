@@ -73,6 +73,16 @@ public class InteractWithStuff : MonoBehaviour
                         moveOpenScript.toggleOpen();
                     }
                 }
+                //If the player is looking at a pop up text object.
+                else if(hit.collider.tag == "PopUp")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Pop up the pop up.
+                        PopUpText popUpTextScript = hit.collider.gameObject.GetComponent<PopUpText>();
+                        popUpTextScript.displayText();
+                    }
+                }
                 //If the player is looking at a test disable object.
                 else if(hit.collider.tag == "TestDisable")
                 {

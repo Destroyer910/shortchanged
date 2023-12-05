@@ -5,7 +5,6 @@ using UnityEngine;
 public class Level2Availability : MonoBehaviour
 {
     public PlayerManager playerManagerScript;
-    private bool isDeactivated = false;
     public GameObject enterButton;
     public GameObject lockedText;
     public Material deactivatedMaterial;
@@ -18,13 +17,12 @@ public class Level2Availability : MonoBehaviour
 
     void Update()
     {
-        if(!playerManagerScript.getUnlockedLevel2() && !isDeactivated)
+        if(!playerManagerScript.getUnlockedLevel2())
         {
             lockedText.SetActive(true);
             enterButton.transform.position = new Vector3(2000,2000,2000);
             theLight.color = deactivatedMaterial.color;
             gameObject.GetComponent<MeshRenderer>().material = deactivatedMaterial;
-            isDeactivated = true;
         }
     }
 }

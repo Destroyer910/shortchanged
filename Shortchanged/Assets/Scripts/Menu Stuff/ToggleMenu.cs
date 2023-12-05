@@ -11,6 +11,8 @@ public class ToggleMenu : MonoBehaviour
         if(menu.activeSelf)
         {
             menu.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {

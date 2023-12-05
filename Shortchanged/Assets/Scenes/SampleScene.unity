@@ -665,9 +665,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCounterClockwise: 1
   rotateUp: 1
+  rotateUpX: 0
   deleteOnOpen: 0
   deleteOnUnlock: 0
-  openOnlyOnUnlock: 1
+  openOnlyOnUnlock: 0
   rotateAmount: 20
   numOfKeys: 2
   textForFail: Locked
@@ -1060,6 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCounterClockwise: 0
   rotateUp: 1
+  rotateUpX: 0
   deleteOnOpen: 0
   rotateAmount: 90
 --- !u!1 &304662062
@@ -1095,6 +1097,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisLockedDoor: {fileID: 214353040}
+  keyGrabbedText: TestKey
+  totalKeyCount: 2
 --- !u!65 &304662064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1524,6 +1528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisLockedDoor: {fileID: 214353040}
+  keyGrabbedText: TestKey
+  totalKeyCount: 2
 --- !u!65 &482896900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2006,8 +2012,9 @@ GameObject:
   - component: {fileID: 626689296}
   - component: {fileID: 626689295}
   - component: {fileID: 626689294}
+  - component: {fileID: 626689298}
   m_Layer: 6
-  m_Name: Capsule
+  m_Name: PopUpTest
   m_TagString: PopUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,6 +2108,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626689298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626689293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a78c6e2eb22164192e323d7175f2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textForPopUp: This test worked!!
+  menu: {fileID: 1948870780}
+  textToDisplay: {fileID: 1048572943}
 --- !u!1 &634451569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,11 +2952,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 941247820}
   speed: 0
+  FailScreen: {fileID: 0}
   groundCheck: {fileID: 1810094074}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  isDetected: 0
 --- !u!143 &941247820
 CharacterController:
   m_ObjectHideFlags: 0

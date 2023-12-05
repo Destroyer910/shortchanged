@@ -18,10 +18,17 @@ public class TestObject : MonoBehaviour
         colorHack.GetComponent<ColorPicker>().startMiniGame(gameObject);
     }
 
-    public void disable()
+    public void disable(bool passed)
     {
-        int newLayer = LayerMask.NameToLayer("CantInteract");
-        gameObject.layer = newLayer;
-        textScript.updateText("TestDisabled");
+        if(passed)
+        {
+            int newLayer = LayerMask.NameToLayer("CantInteract");
+            gameObject.layer = newLayer;
+            textScript.updateText("TestDisabled");
+        }
+        else
+        {
+            return;
+        }
     }
 }
