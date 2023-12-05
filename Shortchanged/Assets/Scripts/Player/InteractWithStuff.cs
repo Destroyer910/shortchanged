@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class InteractWithStuff : MonoBehaviour
 {
@@ -13,20 +14,10 @@ public class InteractWithStuff : MonoBehaviour
     public Sprite cantDoReticle;
     public Sprite canDoReticle;
     public Image reticle;
+    private RaycastHit hit;
+    private Vector3 fwd;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Grab the forward direction of the camera.
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        
-        //The output variable for the raycast.
-        RaycastHit hit;
-        
-        //Draw the ray for debug purposes!
-        Debug.DrawRay(transform.position, fwd * raycastDistance, Color.yellow);
-
-        //If the ray hits an interactable object withing the distance provided.
+    void Update() {
         if (Physics.Raycast(transform.position, fwd, out hit, raycastDistance))
         {
             if(hit.collider.gameObject.layer == layer)
@@ -83,6 +74,35 @@ public class InteractWithStuff : MonoBehaviour
                         testObjectScript.hackTest();
                     }
                 }
+                else if(hit.collider.tag == "Stealable")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        // Steal the thing
+                        Stealables stealables = hit.collider.gameObject.GetComponent<Stealables>();
+                        stealables.stealItem(this.transform.parent.GameObject().GetComponent<PlayerManager>());
+                    }
+                }
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        //Grab the forward direction of the camera.
+        fwd = transform.TransformDirection(Vector3.forward);
+        
+        //Draw the ray for debug purposes!
+        Debug.DrawRay(transform.position, fwd * raycastDistance, Color.yellow);
+
+        //If the ray hits an interactable object withing the distance provided.
+        if (Physics.Raycast(transform.position, fwd, out hit, raycastDistance))
+        {
+            if(hit.collider.gameObject.layer == layer)
+            {
+                //Set the reticle to be when it can interact with stuff.
+                reticle.sprite = canDoReticle;
             }
             else
             {

@@ -10,6 +10,7 @@ TagManager:
   - TestDisable
   - MoveOpen
   - PopUp
+  - Stealable
   layers:
   - Default
   - TransparentFX
