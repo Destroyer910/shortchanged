@@ -7,8 +7,12 @@ public class Stealables : MonoBehaviour
 {
     public int CashValue;
     public void stealItem(PlayerManager managerScript) {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
+
         Debug.Log("Item stolen worth $"+CashValue);
         managerScript.addLevelCash(CashValue);
-        Destroy(gameObject);
+        Destroy(GetComponent<MeshCollider>());
+        Destroy(GetComponent<MeshRenderer>());
     }
 }
