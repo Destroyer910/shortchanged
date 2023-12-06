@@ -14,8 +14,7 @@ public class TestObject : MonoBehaviour
 
     public void hackTest()
     {
-        colorHack.SetActive(true);
-        colorHack.GetComponent<ColorPicker>().startMiniGame(gameObject);
+        colorHack.GetComponent<PassCodeLock>().activateGame(gameObject);
     }
 
     public void disable(bool passed)
