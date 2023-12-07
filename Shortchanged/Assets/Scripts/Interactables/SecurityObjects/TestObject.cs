@@ -6,6 +6,10 @@ public class TestObject : MonoBehaviour
 {
     public GameObject colorHack;
     private ShowText textScript;
+    public int code1;
+    public int code2;
+    public int code3;
+    public int code4;
 
     void Start()
     {
@@ -14,7 +18,7 @@ public class TestObject : MonoBehaviour
 
     public void hackTest()
     {
-        colorHack.GetComponent<PassCodeLock>().activateGame(gameObject);
+        colorHack.GetComponent<PassCodeLock>().activateGame(gameObject, code1, code2, code3, code4);
     }
 
     public void disable(bool passed)

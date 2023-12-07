@@ -21,7 +21,7 @@ public class PassCodeLock : MonoBehaviour
 
     public void upNum1()
     {
-        if(num1++ > 9)
+        if(num1 + 1 > 9)
         {
             num1 = 0;
         }
@@ -33,7 +33,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void downNum1()
     {
-        if(num1-- <0)
+        if(num1 - 1 <0)
         {
             num1 = 9;
         }
@@ -45,7 +45,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void upNum2()
     {
-        if(num2++ > 9)
+        if(num2 + 1 > 9)
         {
             num2 = 0;
         }
@@ -57,7 +57,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void downNum2()
     {
-        if(num2-- <0)
+        if(num2 - 1 <0)
         {
             num2 = 9;
         }
@@ -69,7 +69,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void upNum3()
     {
-        if(num3++ > 9)
+        if(num3 + 1 > 9)
         {
             num3 = 0;
         }
@@ -81,7 +81,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void downNum3()
     {
-        if(num3-- <0)
+        if(num3 - 1 <0)
         {
             num3 = 9;
         }
@@ -93,7 +93,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void upNum4()
     {
-        if(num4++ > 9)
+        if(num4 + 1 > 9)
         {
             num4 = 0;
         }
@@ -105,7 +105,7 @@ public class PassCodeLock : MonoBehaviour
     }
     public void downNum4()
     {
-        if(num4-- <0)
+        if(num4 - 1 <0)
         {
             num4 = 9;
         }
@@ -116,8 +116,12 @@ public class PassCodeLock : MonoBehaviour
         num4Text.text = "" + num4;
     }
 
-    public void activateGame(GameObject objectActivator)
+    public void activateGame(GameObject objectActivator, int req1, int req2, int req3, int req4)
     {
+        num1Req = req1;
+        num2Req = req2;
+        num3Req = req3;
+        num4Req = req4;
         activator = objectActivator;
         gameObject.SetActive(true);
         Time.timeScale = 0;
@@ -128,6 +132,8 @@ public class PassCodeLock : MonoBehaviour
     {
         if(num1 == num1Req && num2 == num2Req && num3 == num3Req && num4 == num4Req)
         {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
             activator.GetComponent<DisableManager>().disableObject(true);
             gameObject.SetActive(false);
         }

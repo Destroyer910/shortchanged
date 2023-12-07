@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1092287993}
         m_TargetAssemblyTypeName: PassCodeLock, Assembly-CSharp
-        m_MethodName: upNum1
+        m_MethodName: downNum1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3389,6 +3389,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHack: {fileID: 1092287991}
+  code1: 5
+  code2: 5
+  code3: 5
+  code4: 5
 --- !u!114 &634581941
 MonoBehaviour:
   m_ObjectHideFlags: 0
