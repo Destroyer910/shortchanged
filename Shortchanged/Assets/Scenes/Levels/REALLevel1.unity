@@ -7867,6 +7867,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHack: {fileID: 0}
+  code1: 0
+  code2: 0
+  code3: 0
+  code4: 0
 --- !u!114 &634581941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23583,7 +23587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.51
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23603,7 +23607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20.63
+      value: -32.36
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_AnchoredPosition.y
