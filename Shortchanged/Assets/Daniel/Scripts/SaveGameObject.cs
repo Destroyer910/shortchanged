@@ -16,14 +16,14 @@ public class SaveGameObject
     public int maxDetection;
     public bool unlockedLevel2;
 
-    private const float DEFAULT_JUMP_HEIGHT = 10f;
-    private const float DEFAULT_SPEED = 5f;
-    private const float DEFAULT_SPRINT_SPEED = 9f;
-    private const float DEFAULT_DETECTION_SPEED = 1.0f;
-    private const int DEFAULT_PERM_CASH = 0;
-    private const float DEFAULT_SENSITIVITY = 500;
-    private const int DEFAULT_MAX_DETECTION = 75;
-    private const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
+    protected const float DEFAULT_JUMP_HEIGHT = 10f;
+    protected const float DEFAULT_SPEED = 5f;
+    protected const float DEFAULT_SPRINT_SPEED = 6f;
+    protected const float DEFAULT_DETECTION_SPEED = 1.0f;
+    protected const int DEFAULT_PERM_CASH = 0;
+    protected const float DEFAULT_SENSITIVITY = 1000f;
+    protected const int DEFAULT_MAX_DETECTION = 75;
+    protected const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
 
     public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2)
     {

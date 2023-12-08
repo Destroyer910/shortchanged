@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,19 @@ public class PlayerManager : MonoBehaviour
 {
     SaveSystem loadSystem = new SaveSystem();
     protected SaveSystem saveGame;
-    protected float JumpHeight;
-    protected float Speed;
-    protected float SprintSpeed;
-    protected float DetectionSpeed;
-    protected float Sensitivity;
-    protected int permCash;
-    protected int levelCash;
-    protected int DetectionLevel;
-    protected int maxDetection;
-    protected bool unlockedLevel2;
+    protected float JumpHeight = 10f;
+    protected float Speed = 5f;
+    protected float SprintSpeed = 6f;
+    protected float DetectionSpeed = 1f;
+    protected float Sensitivity = 0f;
+    protected int permCash = 0;
+    protected int levelCash = 0;
+    protected int DetectionLevel = 0;
+    protected int maxDetection = 75;
+    protected bool unlockedLevel2 = false;
+    
+    [NonSerialized]
+    public bool isDetected;
 
     private void Start()
     {
@@ -33,11 +37,15 @@ public class PlayerManager : MonoBehaviour
         unlockedLevel2 = saveGame.getUnlockedLevel2();
 
         print(JsonUtility.ToJson(saveGame));
+
+        StartCoroutine(IncreaseDetectionLevel(0.2));
+        StartCoroutine(DecreaseDetectionLevel(0.3));
         
         if(gameObject.GetComponent<PlayerMovement>() != null)
         {
             gameObject.GetComponent<PlayerMovement>().doStartStuff();
         }
+
     }
     public void SavePlayerStuff() {
         loadSystem.SaveFile(saveGame);
@@ -100,5 +108,31 @@ public class PlayerManager : MonoBehaviour
     public void setUnlockedLevel2(bool newLevel2) {
         unlockedLevel2 = newLevel2;
         saveGame.setUnlockedLevel2(newLevel2);
+    }
+
+    IEnumerator IncreaseDetectionLevel(double delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds((float)delay);
+            
+            if(isDetected && DetectionLevel < maxDetection)
+            {
+                addDetectionLevel((int)getDetectionSpeed());
+            }
+
+        }
+    }
+    IEnumerator DecreaseDetectionLevel(double delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds((float)delay);
+            
+            if (!isDetected && DetectionLevel > 0)
+            {
+                addDetectionLevel((int)getDetectionSpeed() * -1);
+            }
+        }
     }
 }
