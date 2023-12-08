@@ -56,7 +56,7 @@ public class ColorPicker : MonoBehaviour
         blueButton.SetActive(false);
         greenButton.SetActive(false);
         yield return new WaitForSecondsRealtime(delayTime);
-        activator.GetComponent<DisableManager>().disableObject();
+        activator.GetComponent<DisableManager>().disableObject(true);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
@@ -69,6 +69,9 @@ public class ColorPicker : MonoBehaviour
         blueButton.SetActive(false);
         greenButton.SetActive(false);
         yield return new WaitForSecondsRealtime(delayTime);
-        startMiniGame(activator);
+        activator.GetComponent<DisableManager>().disableObject(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
     }
 }
