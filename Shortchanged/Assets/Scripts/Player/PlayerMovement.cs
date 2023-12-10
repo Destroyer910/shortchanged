@@ -20,11 +20,13 @@ public class PlayerMovement : PlayerManager
 
     Vector3 velocity;
     bool isGrounded;
+    private AudioSource walkingAudio;
 
     bool pass = false;
 
     public void doStartStuff() 
     {
+        walkingAudio = GetComponent<AudioSource>();
         speed = base.getSpeed();   
     }
 
@@ -66,6 +68,19 @@ public class PlayerMovement : PlayerManager
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+
+        if (controller.velocity.normalized.x > 0 || controller.velocity.normalized.z > 0) {
+            walkingAudio.pitch = speed / base.getSpeed();
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+                print("Walking!");
+            }
+
+        } else
+        {
+            walkingAudio.Stop();
+        }
 
         velocity.y += gravity * Time.deltaTime;
 
