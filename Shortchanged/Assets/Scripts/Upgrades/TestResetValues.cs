@@ -14,6 +14,7 @@ public class TestResetValues : MonoBehaviour
         playerManager.setDetectionSpeed(1.0f);
         playerManager.setPermCash(0);
         playerManager.setMaxDetection(75);
+        playerManager.setUnlockedLevel2(false);
         playerManager.SavePlayerStuff();
     }
 }
