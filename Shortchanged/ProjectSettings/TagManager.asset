@@ -11,6 +11,7 @@ TagManager:
   - MoveOpen
   - PopUp
   - Stealable
+  - Exit
   layers:
   - Default
   - TransparentFX
