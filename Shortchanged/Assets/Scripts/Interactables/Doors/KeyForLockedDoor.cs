@@ -10,6 +10,7 @@ public class KeyForLockedDoor : MonoBehaviour
     public string totalKeyCount;
     private LockedDoorOpen openScript;
     private ShowText textScript;
+    public bool ignoreNormalText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,14 @@ public class KeyForLockedDoor : MonoBehaviour
     {
         openScript.unlockDoor();
         Debug.Log("KeyCollected");
-        textScript.updateText(keyGrabbedText + "| Keys left: " + openScript.numOfKeys + "/" + totalKeyCount);
+        if(ignoreNormalText)
+        {
+            textScript.updateText(keyGrabbedText);
+        }
+        else
+        {
+            textScript.updateText(keyGrabbedText + "| Keys left: " + openScript.numOfKeys + "/" + totalKeyCount);
+        }
         Destroy(gameObject);
     }
 }
