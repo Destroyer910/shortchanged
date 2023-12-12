@@ -256,6 +256,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 1467610208}
   keyGrabbedText: 
   totalKeyCount: 3
+  ignoreNormalText: 0
 --- !u!64 &28918214
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1123,6 +1124,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 2844667018170601178}
   keyGrabbedText: 
   totalKeyCount: 
+  ignoreNormalText: 0
 --- !u!64 &207295944
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4297,6 +4299,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 2180125355032519411}
   keyGrabbedText: 
   totalKeyCount: 
+  ignoreNormalText: 0
 --- !u!64 &789485404
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4651,6 +4654,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 3362447056097006593}
   keyGrabbedText: 
   totalKeyCount: 
+  ignoreNormalText: 0
 --- !u!64 &817444501
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5262,7 +5266,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  isDetected: 0
 --- !u!143 &941247820
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6593,6 +6596,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 8956527884504301541}
   keyGrabbedText: They could have hidden this better...
   totalKeyCount: 1
+  ignoreNormalText: 0
 --- !u!64 &1169577861
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8596,6 +8600,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 3362447056097006593}
   keyGrabbedText: 
   totalKeyCount: 
+  ignoreNormalText: 0
 --- !u!64 &1447144273
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10403,6 +10408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1722930097}
+  keepTimeScale: 0
 --- !u!1 &1748086253
 GameObject:
   m_ObjectHideFlags: 0
@@ -13682,7 +13688,7 @@ Transform:
   m_GameObject: {fileID: 2180125355032519411}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.2197666, y: 0, z: -6.4579997}
+  m_LocalPosition: {x: 3.683, y: 0, z: -7.583}
   m_LocalScale: {x: 1, y: 1, z: 1.0641}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17770,6 +17776,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 2965167494043488945}
   keyGrabbedText: This doesn't belong here...
   totalKeyCount: 1
+  ignoreNormalText: 0
 --- !u!64 &6318846914061897299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18898,6 +18905,7 @@ MonoBehaviour:
   thisLockedDoor: {fileID: 9020587134306783191}
   keyGrabbedText: 
   totalKeyCount: 
+  ignoreNormalText: 0
 --- !u!64 &7616458917969918485
 MeshCollider:
   m_ObjectHideFlags: 0
