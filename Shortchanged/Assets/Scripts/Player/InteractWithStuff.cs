@@ -93,6 +93,16 @@ public class InteractWithStuff : MonoBehaviour
                         stealables.stealItem(this.transform.parent.GameObject().GetComponent<PlayerManager>());
                     }
                 }
+                //If the player is looking at the exit.
+                else if(hit.collider.tag == "Exit")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //CompleteTheLevel.
+                        LevelExit levelExitScript = hit.collider.gameObject.GetComponent<LevelExit>();
+                        levelExitScript.completeLevel();
+                    }
+                }
             }
         }
     }
