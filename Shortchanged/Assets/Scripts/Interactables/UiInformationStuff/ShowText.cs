@@ -10,9 +10,9 @@ public class ShowText : MonoBehaviour
 
     public void updateText(string textToShow)
     {
+        StopCoroutine("dissapearInASec");
         notifText.text = textToShow;
-        StopCoroutine(dissapearInASec());
-        StartCoroutine(dissapearInASec());
+        StartCoroutine("dissapearInASec");
     }
 
     private IEnumerator dissapearInASec()
