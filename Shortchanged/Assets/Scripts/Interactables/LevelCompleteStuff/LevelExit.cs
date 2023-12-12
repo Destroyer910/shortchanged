@@ -10,9 +10,13 @@ public class LevelExit : MonoBehaviour
     public GameObject thisMenu;
     private PlayerManager playerManager;
     public bool isLevel1;
+    public int numOfReqStealables;
+    public string textForFail;
+    private ShowText showTextScript;
 
     void Start()
     {
+        showTextScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
         player = GameObject.Find("Player");
         otherMenuStuff = GameObject.Find("AllOtherMenuStuff");
         playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
@@ -20,16 +24,27 @@ public class LevelExit : MonoBehaviour
 
     public void completeLevel()
     {
-        player.GetComponent<PlayerMovement>().enabled = false;
-        otherMenuStuff.SetActive(false);
-        thisMenu.SetActive(true);
-        playerManager.addPermCash(playerManager.getLevelCash());
-        Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        if(isLevel1)
+        if(numOfReqStealables <= 0)
         {
-            playerManager.setUnlockedLevel2(true);
+            player.GetComponent<PlayerMovement>().enabled = false;
+            otherMenuStuff.SetActive(false);
+            thisMenu.SetActive(true);
+            playerManager.addPermCash(playerManager.getLevelCash());
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            if(isLevel1)
+            {
+                playerManager.setUnlockedLevel2(true);
+            }
+            playerManager.SavePlayerStuff();
         }
-        playerManager.SavePlayerStuff();
+        else
+        {
+            showTextScript.updateText(textForFail);
+        }
+    }
+    public void grabbedReqSteal()
+    {
+        numOfReqStealables--;
     }
 }

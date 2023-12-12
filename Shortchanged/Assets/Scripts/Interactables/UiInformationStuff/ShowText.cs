@@ -11,6 +11,7 @@ public class ShowText : MonoBehaviour
     public void updateText(string textToShow)
     {
         notifText.text = textToShow;
+        StopCoroutine(dissapearInASec());
         StartCoroutine(dissapearInASec());
     }
 

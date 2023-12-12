@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class Stealables : MonoBehaviour
 {
+
     public int CashValue;
+    public string displayTextOnGrab;
+    private ShowText showTextScript;
+    public bool isRequired;
+
+    void Start()
+    {
+        showTextScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
+    }
+
     public void stealItem(PlayerManager managerScript) {
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
@@ -14,5 +24,10 @@ public class Stealables : MonoBehaviour
         managerScript.addLevelCash(CashValue);
         Destroy(GetComponent<MeshCollider>());
         Destroy(GetComponent<MeshRenderer>());
+        showTextScript.updateText(displayTextOnGrab);
+        if(isRequired)
+        {
+            GameObject.Find("Exit").GetComponent<LevelExit>().grabbedReqSteal();
+        }
     }
 }
