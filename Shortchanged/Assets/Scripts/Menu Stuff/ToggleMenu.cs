@@ -5,14 +5,18 @@ using UnityEngine;
 public class ToggleMenu : MonoBehaviour
 {
     public GameObject menu;
+    public bool keepTimeScale;
 
     public void toggleMenu()
     {
         if(menu.activeSelf)
         {
             menu.SetActive(false);
-            Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
+            if(!keepTimeScale)
+            {
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
         else
         {
