@@ -11,13 +11,14 @@ public class PlayerManager : MonoBehaviour
     protected float JumpHeight = 10f;
     protected float Speed = 5f;
     protected float SprintSpeed = 6f;
-    protected float DetectionSpeed = 1f;
+    protected float DetectionSpeed = 5f;
     protected float Sensitivity = 0f;
     protected int permCash = 0;
     protected int levelCash = 0;
     protected int DetectionLevel = 0;
     protected int maxDetection = 75;
     protected bool unlockedLevel2 = false;
+    protected bool cameraDisabled = false;
     
     [NonSerialized]
     public bool isDetected;
@@ -60,6 +61,13 @@ public class PlayerManager : MonoBehaviour
     public int getDetectionLevel() { return DetectionLevel; }
     public int getMaxDetection() { return maxDetection; }
     public bool getUnlockedLevel2() { return unlockedLevel2; }
+
+    public void disableCameras() {
+        cameraDisabled = true;
+    }
+    public void enableCameras() {
+        cameraDisabled = false;
+    }
 
     public void setJumpHeight(float newJumpHeight) {
         JumpHeight = newJumpHeight;
@@ -116,7 +124,7 @@ public class PlayerManager : MonoBehaviour
         {
             yield return new WaitForSeconds((float)delay);
             
-            if(isDetected && DetectionLevel < maxDetection)
+            if(isDetected && DetectionLevel < maxDetection && !cameraDisabled)
             {
                 addDetectionLevel((int)getDetectionSpeed());
             }

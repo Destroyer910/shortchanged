@@ -7,6 +7,7 @@ public class CameraDetection : MonoBehaviour
     float delay = 0.1f;
     PlayerManager playerManager;
     bool isInTrigger = false;
+    public double detectionSpeed = 1;
     void OnTriggerEnter(Collider other)
     {
         this.GetComponent<Light>().enabled = true;
@@ -19,21 +20,5 @@ public class CameraDetection : MonoBehaviour
         playerManager.isDetected = false;
         this.GetComponent<Light>().enabled = false;
         isInTrigger = false;
-    }
-    IEnumerator IncreaseDetectionLevel()
-    {
-        while (playerManager.getDetectionLevel() < playerManager.getMaxDetection() && isInTrigger)
-        {
-            yield return new WaitForSeconds(delay);
-            playerManager.addDetectionLevel((int)playerManager.getDetectionSpeed());
-        }
-    }
-    IEnumerator DecreaseDetectionLevel()
-    {
-        while (playerManager.getDetectionLevel() > 0 && !isInTrigger)
-        {
-            yield return new WaitForSeconds(delay);
-            playerManager.addDetectionLevel((int)playerManager.getDetectionSpeed()*-1);
-        }
     }
 }
