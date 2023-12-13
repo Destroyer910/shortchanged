@@ -19,7 +19,7 @@ public class LevelExit : MonoBehaviour
         showTextScript = GameObject.Find("UiDisplay").GetComponent<ShowText>();
         player = GameObject.Find("Player");
         otherMenuStuff = GameObject.Find("AllOtherMenuStuff");
-        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        playerManager = player.GetComponent<PlayerManager>();
     }
 
     public void completeLevel()
