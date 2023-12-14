@@ -39,7 +39,9 @@ public class PlayerMovement : PlayerManager
         {
             velocity.y = -2f;
         }
-
+        if(Input.GetKeyDown(KeyCode.F)) {
+            // Code for Disable cameras go here
+        }
         //Sprint if the user is holding left shift;
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -50,7 +52,7 @@ public class PlayerMovement : PlayerManager
         {
             speed = base.getSpeed();
         }
-        if(DetectionLevel == maxDetection) {
+        if(DetectionLevel >= maxDetection) {
             if (!pass)
             {
                 pass = true;
@@ -74,7 +76,6 @@ public class PlayerMovement : PlayerManager
             if (!walkingAudio.isPlaying)
             {
                 walkingAudio.Play();
-                print("Walking!");
             }
 
         } else
