@@ -96,7 +96,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _Color: {r: 1, g: 0.55868834, b: 0, a: 0.38431373}
+    - _Color: {r: 0, g: 0.24096298, b: 1, a: 0.38431373}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
