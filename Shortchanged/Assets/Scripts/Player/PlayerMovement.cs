@@ -23,11 +23,13 @@ public class PlayerMovement : PlayerManager
     private AudioSource walkingAudio;
 
     bool pass = false;
-
+    bool controlDown = false;
+    Transform camera;
     public void doStartStuff() 
     {
         walkingAudio = GetComponent<AudioSource>();
         speed = base.getSpeed();   
+        camera = this.gameObject.transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -38,6 +40,25 @@ public class PlayerMovement : PlayerManager
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+        
+        if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+        {
+            controlDown = true;
+            if (controlDown)
+            {
+                camera.position = new Vector3(camera.position.x, camera.position.y - 0.7f, camera.position.z);
+                speed /= 2;
+            }
+        }
+        if(Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
+        {
+            controlDown = false;
+            if (!controlDown)
+            {
+                camera.position = new Vector3(camera.position.x, camera.position.y + 0.7f, camera.position.z);
+                speed *= 2;
+            }
         }
         if(Input.GetKeyDown(KeyCode.F)) {
             // Code for Disable cameras go here
@@ -71,8 +92,8 @@ public class PlayerMovement : PlayerManager
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (controller.velocity.normalized.x > 0 || controller.velocity.normalized.z > 0) {
-            walkingAudio.pitch = speed / base.getSpeed();
+        if (controller.velocity.x > 0 || controller.velocity.z > 0) {
+            walkingAudio.pitch = (controller.velocity.magnitude / base.getSpeed()) - 0.1f;
             if (!walkingAudio.isPlaying)
             {
                 walkingAudio.Play();
