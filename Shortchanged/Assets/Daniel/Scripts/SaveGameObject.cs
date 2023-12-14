@@ -15,6 +15,7 @@ public class SaveGameObject
     public float Sensitivity;
     public int maxDetection;
     public bool unlockedLevel2;
+    public int cashMultiplyer;
 
     protected const float DEFAULT_JUMP_HEIGHT = 10f;
     protected const float DEFAULT_SPEED = 5f;
@@ -24,8 +25,9 @@ public class SaveGameObject
     protected const float DEFAULT_SENSITIVITY = 1000f;
     protected const int DEFAULT_MAX_DETECTION = 75;
     protected const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
-
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2)
+    protected const int DEFAULT_CASH_MULTIPLYER = 1;
+                            //Why is there health??!!?!?
+    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2, int newCashMultiplyer)
     {
         setJumpHeight(jumpHeight);
         setSpeed(speed);
@@ -35,6 +37,7 @@ public class SaveGameObject
         setPermCash(newPermCash);
         setMaxDetection(newMax);
         setUnlockedLevel2(newLevel2);
+        setCashMultiplyer(newCashMultiplyer);
     }
 
     public SaveGameObject()
@@ -47,6 +50,7 @@ public class SaveGameObject
         setPermCash(DEFAULT_PERM_CASH);
         setMaxDetection(DEFAULT_MAX_DETECTION);
         setUnlockedLevel2(DEFAULT_UNLOCKED_LEVEL_2);
+        setCashMultiplyer(DEFAULT_CASH_MULTIPLYER);
     }
 
     public float getJumpHeight() { return JumpHeight; }
@@ -57,6 +61,7 @@ public class SaveGameObject
     public float getSensitivity() {  return Sensitivity; }
     public int getMaxDetection() { return maxDetection; }
     public bool getUnlockedLevel2() { return unlockedLevel2; }
+    public int getCashMultiplyer() { return cashMultiplyer; }
 
     public void setJumpHeight(float jumpHeight)
     {
@@ -91,5 +96,9 @@ public class SaveGameObject
     public void setUnlockedLevel2(bool newLevel2)
     {
         unlockedLevel2 = newLevel2;
+    }
+    public void setCashMultiplyer(int newCashMultiplyer)
+    {
+        cashMultiplyer = newCashMultiplyer;
     }
 }

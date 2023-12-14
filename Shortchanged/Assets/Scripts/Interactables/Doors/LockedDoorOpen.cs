@@ -19,6 +19,8 @@ public class LockedDoorOpen : MonoBehaviour
     public float numOfKeys;
     public string textForFail;
     public string textToReplaceFailAfterOpenOnUnlock;
+    public string textForFirstUnlock;
+    private bool hasDisplayedFirstOpen = false;
     
 
     void Start()
@@ -31,6 +33,11 @@ public class LockedDoorOpen : MonoBehaviour
     {
         if(unlocked)
         {
+            if(!hasDisplayedFirstOpen)
+            {
+                textScript.updateText(textForFirstUnlock); 
+                hasDisplayedFirstOpen = true; 
+            }
             if(deleteOnOpen)
             {
                 Destroy(gameObject);

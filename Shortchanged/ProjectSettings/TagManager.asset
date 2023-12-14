@@ -12,6 +12,8 @@ TagManager:
   - PopUp
   - Stealable
   - Exit
+  - ColorHack
+  - CodeHack
   layers:
   - Default
   - TransparentFX

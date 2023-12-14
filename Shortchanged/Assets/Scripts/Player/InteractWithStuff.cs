@@ -103,6 +103,26 @@ public class InteractWithStuff : MonoBehaviour
                         levelExitScript.completeLevel();
                     }
                 }
+                //If the player is looking at a color hacking minigame key.
+                else if(hit.collider.tag == "ColorHack")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Start the minigame.
+                        HackingKeyColor hackingColorScript = hit.collider.gameObject.GetComponent<HackingKeyColor>();
+                        hackingColorScript.beginHack();
+                    }
+                }
+                //If the player is looking at code hacking minigame key.
+                else if(hit.collider.tag == "CodeHack")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Start the minigame
+                        HackingKeyCode hackingCodeScript = hit.collider.gameObject.GetComponent<HackingKeyCode>();
+                        hackingCodeScript.beginHack();
+                    }
+                }
             }
         }
     }

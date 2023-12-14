@@ -10,5 +10,13 @@ public class DisableManager : MonoBehaviour
         {
             gameObject.GetComponent<TestObject>().disable(passed);
         }
+        if(gameObject.tag == "ColorHack")
+        {
+            gameObject.GetComponent<HackingKeyColor>().disable(passed);
+        }
+        if(gameObject.tag == "CodeHack")
+        {
+            gameObject.GetComponent<HackingKeyCode>().disable(passed);
+        }
     }
 }

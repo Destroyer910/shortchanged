@@ -8,7 +8,7 @@ public class AddMoneyTest : MonoBehaviour
     
     public void addMoneyTest()
     {
-        playerManager.addPermCash(1000);
+        playerManager.addPermCash(10000);
         playerManager.SavePlayerStuff();
     }
 }
