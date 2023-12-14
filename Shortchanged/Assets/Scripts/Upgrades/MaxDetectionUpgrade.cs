@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class MaxDetectionUpgrade : MonoBehaviour
         startPosition = transform.position;  
     }
 
-    public void upgradeSprintSpeed()
+    public void upgradeMaxDetection()
     {   
         if(playerManagerScript.getPermCash() < cashCost)
         {
