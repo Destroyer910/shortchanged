@@ -11,7 +11,7 @@ public class TestResetValues : MonoBehaviour
         playerManager.setJumpHeight(10f);
         playerManager.setSpeed(5f);
         playerManager.setSprintSpeed(9f);
-        playerManager.setDetectionSpeed(1.0f);
+        playerManager.setDetectionSpeed(3.0f);
         playerManager.setPermCash(0);
         playerManager.setMaxDetection(75);
         playerManager.setUnlockedLevel2(false);

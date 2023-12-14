@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaxDetectionUpgrade : MonoBehaviour
+public class DetectionSpeedUpgrade : MonoBehaviour
 {
     public PlayerManager playerManagerScript;
     public ShowText showTextScript;
@@ -10,9 +10,9 @@ public class MaxDetectionUpgrade : MonoBehaviour
     public string textForBuy;
     public int cashCost;
     //Change name per upgrade
-    public int reqMaxDet;
+    public float reqDetSpeed;
     //Change name per upgrade
-    public int newMaxDet;
+    public float newDetSpeed;
     public GameObject visualUpgrade;
     private bool isDeactivated = false;
     public Material deactivatedMaterial;
@@ -29,7 +29,8 @@ public class MaxDetectionUpgrade : MonoBehaviour
         startPosition = transform.position;  
     }
 
-    public void upgradeMaxDetection()
+    //Change nethod name.
+    public void upgradeDetectionSpeed()
     {   
         if(playerManagerScript.getPermCash() < cashCost)
         {
@@ -38,7 +39,7 @@ public class MaxDetectionUpgrade : MonoBehaviour
         else
         {
             //Change value per script
-            playerManagerScript.setMaxDetection(newMaxDet);
+            playerManagerScript.setDetectionSpeed(newDetSpeed);
             playerManagerScript.addPermCash(-cashCost);
             playerManagerScript.SavePlayerStuff();
             showTextScript.updateText(textForBuy);
@@ -48,19 +49,19 @@ public class MaxDetectionUpgrade : MonoBehaviour
     private void Update() 
     {
         //Change check per script
-        if(playerManagerScript.getMaxDetection() >= newMaxDet && !isDeactivated)
+        if(playerManagerScript.getDetectionSpeed() <= newDetSpeed && !isDeactivated)
         {
             disableButton();
             isBought = true;
         }
         //Change check per script
-        if(playerManagerScript.getMaxDetection() < reqMaxDet && !isDeactivated)
+        if(playerManagerScript.getDetectionSpeed() > reqDetSpeed && !isDeactivated)
         {
             disableButton();
             isBought = false;
         }
         //Change check per script
-        else if(playerManagerScript.getMaxDetection() == reqMaxDet && isDeactivated)
+        else if(playerManagerScript.getDetectionSpeed() == reqDetSpeed && isDeactivated)
         {
             enableButton();
         }
