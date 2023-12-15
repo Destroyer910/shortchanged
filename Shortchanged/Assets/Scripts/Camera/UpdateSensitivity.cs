@@ -25,6 +25,6 @@ public class UpdateSensitivity : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         cameraScript.mouseSensitivity = playerManagerScript.getSensitivity();
-        sensitivitySlider.value = (playerManagerScript.getSensitivity() - 1250) / 2000;
+        sensitivitySlider.value = playerManagerScript.getSensitivity();
     }
 }
