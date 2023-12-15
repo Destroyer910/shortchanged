@@ -113,7 +113,7 @@ public class InteractWithStuff : MonoBehaviour
                         hackingColorScript.beginHack();
                     }
                 }
-                //If the player is looking at code hacking minigame key.
+                //If the player is looking at a code hacking minigame key.
                 else if(hit.collider.tag == "CodeHack")
                 {
                     if(Input.GetKeyDown(KeyCode.E))
@@ -121,6 +121,16 @@ public class InteractWithStuff : MonoBehaviour
                         //Start the minigame
                         HackingKeyCode hackingCodeScript = hit.collider.gameObject.GetComponent<HackingKeyCode>();
                         hackingCodeScript.beginHack();
+                    }
+                }
+                //If the player is looking at a simon says minigame key.
+                else if(hit.collider.tag == "SimonSays")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Start the minigame.
+                        HackingKeySimonSays hackingSimonSaysScript = hit.collider.gameObject.GetComponent<HackingKeySimonSays>();
+                        hackingSimonSaysScript.beginHack();
                     }
                 }
             }

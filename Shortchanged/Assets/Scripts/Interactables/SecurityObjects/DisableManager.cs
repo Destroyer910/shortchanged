@@ -18,5 +18,9 @@ public class DisableManager : MonoBehaviour
         {
             gameObject.GetComponent<HackingKeyCode>().disable(passed);
         }
+        if(gameObject.tag == "SimonSays")
+        {
+            gameObject.GetComponent<HackingKeySimonSays>().disable(passed);
+        }
     }
 }

@@ -63,7 +63,7 @@ public class PlayerManager : MonoBehaviour
     public int getDetectionLevel() { return DetectionLevel; }
     public int getMaxDetection() { return maxDetection; }
     public bool getUnlockedLevel2() { return unlockedLevel2; }
-    public bool getCashMultiplyer() { return cashMultiplyer; }
+    public int getCashMultiplyer() { return cashMultiplyer; }
 
     public void disableCameras() {
         cameraDisabled = true;
