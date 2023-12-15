@@ -133,6 +133,16 @@ public class InteractWithStuff : MonoBehaviour
                         hackingSimonSaysScript.beginHack();
                     }
                 }
+                //If the player is looking at a camera disable refil.
+                else if(hit.collider.tag == "AmmoRefil")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Grab the camera disable refil
+                        GrabAmmo grabAmmoScript = hit.collider.gameObject.GetComponent<GrabAmmo>();
+                        grabAmmoScript.grabAmmo();
+                    }
+                }
             }
         }
     }

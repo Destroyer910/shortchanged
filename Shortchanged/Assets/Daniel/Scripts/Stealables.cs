@@ -21,7 +21,7 @@ public class Stealables : MonoBehaviour
         audio.Play();
 
         Debug.Log("Item stolen worth $"+CashValue);
-        managerScript.addLevelCash(CashValue);
+        managerScript.addLevelCash(CashValue * managerScript.getCashMultiplyer());
         Destroy(GetComponent<MeshCollider>());
         Destroy(GetComponent<MeshRenderer>());
         showTextScript.updateText(displayTextOnGrab);

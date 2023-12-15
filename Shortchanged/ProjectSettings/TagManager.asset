@@ -15,6 +15,7 @@ TagManager:
   - ColorHack
   - CodeHack
   - SimonSays
+  - AmmoRefil
   layers:
   - Default
   - TransparentFX

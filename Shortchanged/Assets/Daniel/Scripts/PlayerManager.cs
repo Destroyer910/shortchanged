@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     protected bool unlockedLevel2 = false;
     protected bool cameraDisabled = false;
     protected int cashMultiplyer = 1;
+    protected int cameraDisableCount = 0;
     
     [NonSerialized]
     public bool isDetected;
@@ -38,6 +39,7 @@ public class PlayerManager : MonoBehaviour
         maxDetection = saveGame.getMaxDetection();
         unlockedLevel2 = saveGame.getUnlockedLevel2();
         cashMultiplyer = saveGame.getCashMultiplyer();
+        cameraDisableCount = saveGame.getCameraDisableCount();
 
         print(JsonUtility.ToJson(saveGame));
 
@@ -64,6 +66,7 @@ public class PlayerManager : MonoBehaviour
     public int getMaxDetection() { return maxDetection; }
     public bool getUnlockedLevel2() { return unlockedLevel2; }
     public int getCashMultiplyer() { return cashMultiplyer; }
+    public int getCameraDisableCount() { return cameraDisableCount; }
 
     public void disableCameras() {
         cameraDisabled = true;
@@ -125,6 +128,11 @@ public class PlayerManager : MonoBehaviour
         cashMultiplyer = newCashMultiplyer;
         saveGame.setCashMultiplyer(newCashMultiplyer);
     }
+    public void setCameraDisableCount(int newCameraDisableCount)
+    {
+        cameraDisableCount = newCameraDisableCount;
+        saveGame.setCameraDisableCount(newCameraDisableCount);
+    }
 
     IEnumerator IncreaseDetectionLevel(double delay)
     {
@@ -147,7 +155,7 @@ public class PlayerManager : MonoBehaviour
             
             if (!isDetected && DetectionLevel > 0)
             {
-                addDetectionLevel((int)getDetectionSpeed() * -1);
+                addDetectionLevel(-1);
             }
         }
     }

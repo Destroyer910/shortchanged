@@ -3129,6 +3129,7 @@ MonoBehaviour:
   numOfKeys: 2
   textForFail: Locked
   textToReplaceFailAfterOpenOnUnlock: Door is already open.
+  textForFirstUnlock: 
 --- !u!54 &214353042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8465,6 +8466,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: Locked...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!1 &489819588
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,6 +10122,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: A special book could fit here...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!64 &586652252
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14644,6 +14647,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: Looks like a book could fit perfectly here...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!64 &839144886
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19770,6 +19774,7 @@ MonoBehaviour:
   numOfKeys: 800
   textForFail: How did you get here?
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!1 &1154397425
 GameObject:
   m_ObjectHideFlags: 0
@@ -24621,6 +24626,7 @@ MonoBehaviour:
   numOfKeys: 0
   textForFail: Its a fake...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!64 &1481453837
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25788,6 +25794,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: Locked...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!65 &1558032545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29770,6 +29777,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: The key should be around here somewhere
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!1 &1775943786
 GameObject:
   m_ObjectHideFlags: 0
@@ -34972,7 +34980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.38
+      value: 5.49
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34992,7 +35000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -45.93
+      value: -42.61
       objectReference: {fileID: 0}
     - target: {fileID: 5752045379807679987, guid: 93f0b1d8a6d10fb4e86be089e73d4a44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -52218,6 +52226,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: This door has no key hole...
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!33 &3469287838199676495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -57579,6 +57588,7 @@ MonoBehaviour:
   numOfKeys: 1
   textForFail: Another lock in a room so hidden?
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!64 &5334477910186436306
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69036,6 +69046,7 @@ MonoBehaviour:
   numOfKeys: 5
   textForFail: 'I need more keys... '
   textToReplaceFailAfterOpenOnUnlock: 
+  textForFirstUnlock: 
 --- !u!64 &8569481034517275465
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class SaveGameObject
     public int maxDetection;
     public bool unlockedLevel2;
     public int cashMultiplyer;
+    public int cameraDisableCount;
 
     protected const float DEFAULT_JUMP_HEIGHT = 10f;
     protected const float DEFAULT_SPEED = 5f;
@@ -26,8 +27,9 @@ public class SaveGameObject
     protected const int DEFAULT_MAX_DETECTION = 75;
     protected const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
     protected const int DEFAULT_CASH_MULTIPLYER = 1;
+    protected const int DEFAULT_CAMERA_DISABLE_COUNT = 0;
                             //Why is there health??!!?!?
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2, int newCashMultiplyer)
+    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2, int newCashMultiplyer, int newCameraDisableCount)
     {
         setJumpHeight(jumpHeight);
         setSpeed(speed);
@@ -38,6 +40,7 @@ public class SaveGameObject
         setMaxDetection(newMax);
         setUnlockedLevel2(newLevel2);
         setCashMultiplyer(newCashMultiplyer);
+        setCameraDisableCount(newCameraDisableCount);
     }
 
     public SaveGameObject()
@@ -51,6 +54,7 @@ public class SaveGameObject
         setMaxDetection(DEFAULT_MAX_DETECTION);
         setUnlockedLevel2(DEFAULT_UNLOCKED_LEVEL_2);
         setCashMultiplyer(DEFAULT_CASH_MULTIPLYER);
+        setCameraDisableCount(DEFAULT_CAMERA_DISABLE_COUNT);
     }
 
     public float getJumpHeight() { return JumpHeight; }
@@ -62,6 +66,7 @@ public class SaveGameObject
     public int getMaxDetection() { return maxDetection; }
     public bool getUnlockedLevel2() { return unlockedLevel2; }
     public int getCashMultiplyer() { return cashMultiplyer; }
+    public int getCameraDisableCount() { return cameraDisableCount; }
 
     public void setJumpHeight(float jumpHeight)
     {
@@ -100,5 +105,9 @@ public class SaveGameObject
     public void setCashMultiplyer(int newCashMultiplyer)
     {
         cashMultiplyer = newCashMultiplyer;
+    }
+    public void setCameraDisableCount(int newCameraDisableCount)
+    {
+        cameraDisableCount = newCameraDisableCount;
     }
 }

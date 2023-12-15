@@ -17,6 +17,8 @@ public class PlayerMovement : PlayerManager
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public float disabledTime = 3f;
+    public int cameraDisableCountLocal;
 
     Vector3 velocity;
     bool isGrounded;
@@ -27,7 +29,15 @@ public class PlayerMovement : PlayerManager
     public void doStartStuff() 
     {
         walkingAudio = GetComponent<AudioSource>();
-        speed = base.getSpeed();   
+        speed = base.getSpeed(); 
+        cameraDisableCountLocal = base.getCameraDisableCount();
+    }
+
+    public IEnumerator disableCameras()
+    {
+        base.disableCameras();
+        yield return new WaitForSecondsRealtime(disabledTime);
+        base.enableCameras();
     }
 
     // Update is called once per frame
@@ -40,7 +50,12 @@ public class PlayerMovement : PlayerManager
             velocity.y = -2f;
         }
         if(Input.GetKeyDown(KeyCode.F)) {
-            // Code for Disable cameras go here
+            if(cameraDisableCountLocal > 0)
+            {
+                StopCoroutine("disableCameras");
+                cameraDisableCountLocal--;
+                StartCoroutine("disableCameras");
+            }
         }
         //Sprint if the user is holding left shift;
         if(Input.GetKeyDown(KeyCode.LeftShift))
