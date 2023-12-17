@@ -19,7 +19,7 @@ public class SaveGameObject
     public int cameraDisableCount;
 
     protected const float DEFAULT_JUMP_HEIGHT = 10f;
-    protected const float DEFAULT_SPEED = 5f;
+    protected const float DEFAULT_SPEED = 4f;
     protected const float DEFAULT_SPRINT_SPEED = 6f;
     protected const float DEFAULT_DETECTION_SPEED = 5.0f;
     protected const int DEFAULT_PERM_CASH = 0;
