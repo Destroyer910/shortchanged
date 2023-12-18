@@ -10,6 +10,8 @@ public class Stealables : MonoBehaviour
     public string displayTextOnGrab;
     private ShowText showTextScript;
     public bool isRequired;
+    public GameObject otherObject;
+    public bool destroyOtherObject;
 
     void Start()
     {
@@ -24,6 +26,10 @@ public class Stealables : MonoBehaviour
         managerScript.addLevelCash(CashValue * managerScript.getCashMultiplyer());
         Destroy(GetComponent<MeshCollider>());
         Destroy(GetComponent<MeshRenderer>());
+        if(destroyOtherObject)
+        {
+            Destroy(otherObject);
+        }
         showTextScript.updateText(displayTextOnGrab);
         if(isRequired)
         {
