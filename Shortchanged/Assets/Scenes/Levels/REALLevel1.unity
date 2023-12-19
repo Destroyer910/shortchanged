@@ -21549,7 +21549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1115991112}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: openPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38435,9 +38435,9 @@ GameObject:
   - component: {fileID: 2068590288}
   - component: {fileID: 2068590287}
   - component: {fileID: 2068590290}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: pSphere1
-  m_TagString: MoveOpen
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
