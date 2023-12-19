@@ -143,6 +143,14 @@ public class InteractWithStuff : MonoBehaviour
                         grabAmmoScript.grabAmmo();
                     }
                 }
+                else if(hit.collider.tag == "Painting")
+                {
+                    if(Input.GetKeyDown(KeyCode.E))
+                    {
+                        PaintingScript painting = hit.collider.gameObject.GetComponent<PaintingScript>();
+                        painting.makeNoise();
+                    }
+                }
             }
         }
     }

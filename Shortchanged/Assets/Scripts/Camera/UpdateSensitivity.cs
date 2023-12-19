@@ -12,18 +12,19 @@ public class UpdateSensitivity : MonoBehaviour
 
     void Start()
     {
-        startDelayed();
+        StartCoroutine("startDelayed");
     }
 
     public void updateSensitivity()
     {
-        playerManagerScript.setSensitivity(sensitivitySlider.value * 2000 + 1250);
+        playerManagerScript.setSensitivity(sensitivitySlider.value);
         cameraScript.mouseSensitivity = playerManagerScript.getSensitivity();
         playerManagerScript.SavePlayerStuff();
     }
     IEnumerator startDelayed()
     {
         yield return new WaitForSeconds(0.1f);
+        print(playerManagerScript.getSensitivity());
         cameraScript.mouseSensitivity = playerManagerScript.getSensitivity();
         sensitivitySlider.value = playerManagerScript.getSensitivity();
     }

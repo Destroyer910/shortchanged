@@ -16,6 +16,7 @@ TagManager:
   - CodeHack
   - SimonSays
   - AmmoRefil
+  - Painting
   layers:
   - Default
   - TransparentFX
