@@ -17,6 +17,7 @@ public class SaveGameObject
     public bool unlockedLevel2;
     public int cashMultiplyer;
     public int cameraDisableCount;
+    public bool unlockedBonus;
 
     protected const float DEFAULT_JUMP_HEIGHT = 10f;
     protected const float DEFAULT_SPEED = 4f;
@@ -28,8 +29,9 @@ public class SaveGameObject
     protected const bool DEFAULT_UNLOCKED_LEVEL_2 = false;
     protected const int DEFAULT_CASH_MULTIPLYER = 1;
     protected const int DEFAULT_CAMERA_DISABLE_COUNT = 0;
+    protected const bool DEFAULT_UNLOCKED_BONUS = false;
                             //Why is there health??!!?!?
-    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2, int newCashMultiplyer, int newCameraDisableCount)
+    public SaveGameObject(int health, float jumpHeight, float speed, float sprintSpeed, float detectionRadius, float sensitivity, int newPermCash, int newMax, bool newLevel2, int newCashMultiplyer, int newCameraDisableCount, bool newUnlockedBonus)
     {
         setJumpHeight(jumpHeight);
         setSpeed(speed);
@@ -41,6 +43,7 @@ public class SaveGameObject
         setUnlockedLevel2(newLevel2);
         setCashMultiplyer(newCashMultiplyer);
         setCameraDisableCount(newCameraDisableCount);
+        setUnlockedBonus(newUnlockedBonus);
     }
 
     public SaveGameObject()
@@ -55,6 +58,7 @@ public class SaveGameObject
         setUnlockedLevel2(DEFAULT_UNLOCKED_LEVEL_2);
         setCashMultiplyer(DEFAULT_CASH_MULTIPLYER);
         setCameraDisableCount(DEFAULT_CAMERA_DISABLE_COUNT);
+        setUnlockedBonus(DEFAULT_UNLOCKED_BONUS);
     }
 
     public float getJumpHeight() { return JumpHeight; }
@@ -67,6 +71,7 @@ public class SaveGameObject
     public bool getUnlockedLevel2() { return unlockedLevel2; }
     public int getCashMultiplyer() { return cashMultiplyer; }
     public int getCameraDisableCount() { return cameraDisableCount; }
+    public bool getUnlockedBonus() { return unlockedBonus; }
 
     public void setJumpHeight(float jumpHeight)
     {
@@ -109,5 +114,9 @@ public class SaveGameObject
     public void setCameraDisableCount(int newCameraDisableCount)
     {
         cameraDisableCount = newCameraDisableCount;
+    }
+    public void setUnlockedBonus(bool newUnlockedBonus)
+    {
+        unlockedBonus = newUnlockedBonus;
     }
 }

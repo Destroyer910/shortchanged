@@ -16,6 +16,8 @@ public class TestResetValues : MonoBehaviour
         playerManager.setMaxDetection(75);
         playerManager.setUnlockedLevel2(false);
         playerManager.setCashMultiplyer(1);
+        playerManager.setCameraDisableCount(0);
+        playerManager.setUnlockedBonus(false);
         playerManager.SavePlayerStuff();
     }
 }

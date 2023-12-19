@@ -93,7 +93,7 @@ public class PlayerMovement : PlayerManager
             {
                 pass = true;
                 Time.timeScale = 0;
-                addPermCash(-50);
+                addPermCash(-3000);
                 SavePlayerStuff();
                 FailScreen.SetActive(true);
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
